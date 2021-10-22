@@ -1,0 +1,42 @@
+<!-- DADOS DO IMÓVEL -->
+{{titulo}}
+<div>
+    <p>Dados do Imóvel </p>
+    <main class="container-principal">
+        <form class="row g-3">
+            <div class="col-md-4">
+                <label for="tipoDeImovel" class="form-label"></label>
+                <select class="form-control" ng-model="x.omovel" name="profissao"
+                    ng-options="listaProfissoes for listaProfissoes in profissoes" ng-required="true">
+                    <option value="">Tipo do Imóvel</option>
+                </select>
+
+            </div>
+            <div class="col-md-4">
+                <label for="nome" class="form-label"></label>
+                <input type="text" class="form-control" id="validationDefault01" value="" required
+                    placeholder="Renda mensal">
+            </div>
+            <div class="col-md-4">
+                <label for="nome" class="form-label"></label>
+                <input type="text" class="form-control" id="validationDefault01" value="" required
+                    placeholder="Valor do Imóvel">
+            </div>
+            <div class="col-md-4">
+                <label for="nome" class="form-label"></label>
+                <input type="text" class="form-control" id="validationDefault01" value="" required
+                    placeholder="valor da entrada">
+            </div>
+            <div class="col-md-4">
+                <label for="nome" class="form-label"></label>
+                <input type="text" class="form-control" id="validationDefault01" value="" required
+                    placeholder="Em quantas parcelas deseja parcelar?">
+            </div>
+
+            <div class="buttons-dados-do-proponentes">
+                <button type="button" class="btn btn-primary btn-sm ">VOLTAR</button>
+                <button ng-click="telaAprovado()" type="button" class="btn btn-primary btn-sm ">SIMULAR</button>
+            </div>
+        </form>
+    </main>    
+</div>
