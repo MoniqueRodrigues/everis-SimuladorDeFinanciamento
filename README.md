@@ -1,2 +1,2 @@
 # everis-SimuladorDeFinanciamento
-Desafio desenvolvido em Angular JS.
+desafio: Criação de um simulador de financiamento através do framework AngularJS.
