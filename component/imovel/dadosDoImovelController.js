@@ -11,7 +11,15 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
     //ir para tela Reprovado:
     $scope.telaReprovado = function () {
         $location.path("/reprovado")
+    };   
+   
+
+    $scope.telaProponente = function () {
+        $location.path("/proponente")
     };
+
+
+
 
     //CRIAR FUNÇÃO QUE DIRECIONA PARA AS TELAS
     //DE APROVADO OU NÃO DE ACORDO COM OS CALCULOS.

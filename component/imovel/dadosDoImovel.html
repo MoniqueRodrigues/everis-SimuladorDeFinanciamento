@@ -1,42 +1,57 @@
 <!-- DADOS DO IMÓVEL -->
-{{titulo}}
-<div>
-    <p>Dados do Imóvel </p>
-    <main class="container-principal">
-        <form class="row g-3">
-            <div class="col-md-4">
-                <label for="tipoDeImovel" class="form-label"></label>
-                <select class="form-control" ng-model="x.omovel" name="profissao"
-                    ng-options="listaProfissoes for listaProfissoes in profissoes" ng-required="true">
-                    <option value="">Tipo do Imóvel</option>
-                </select>
+<!-- {{titulo}} -->
 
-            </div>
-            <div class="col-md-4">
-                <label for="nome" class="form-label"></label>
-                <input type="text" class="form-control" id="validationDefault01" value="" required
-                    placeholder="Renda mensal">
-            </div>
-            <div class="col-md-4">
-                <label for="nome" class="form-label"></label>
-                <input type="text" class="form-control" id="validationDefault01" value="" required
-                    placeholder="Valor do Imóvel">
-            </div>
-            <div class="col-md-4">
-                <label for="nome" class="form-label"></label>
-                <input type="text" class="form-control" id="validationDefault01" value="" required
-                    placeholder="valor da entrada">
-            </div>
-            <div class="col-md-4">
-                <label for="nome" class="form-label"></label>
-                <input type="text" class="form-control" id="validationDefault01" value="" required
-                    placeholder="Em quantas parcelas deseja parcelar?">
-            </div>
+<p>Dados do Imóvel </p>
+<form name="dadosImovel" class="dadosImovel container">
+    <div class="row g-3 d-flex justify-content-sm-between">
+        <div class="col">            
+            <label for="tipoImovel" class="form-label"></label>
+            <select class="form-control" ng-model="imovel.tipo" name="profissao"
+                ng-options="listaImoveis for listaImoveis in tipo" ng-required="true">
+                <option value="">Tipo do Imóvel</option>
+            </select>
+        </div>
 
-            <div class="buttons-dados-do-proponentes">
-                <button type="button" class="btn btn-primary btn-sm ">VOLTAR</button>
-                <button ng-click="telaAprovado()" type="button" class="btn btn-primary btn-sm ">SIMULAR</button>
+        <div class="col">
+            <div class="col">
+                <label for="renda" class="form-label"></label>
+                <input type="text" id="renda" name="renda" minlength="3" ng-required="true" class="form-control"
+                    placeholder="Renda mensal" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"
+                    ng-model="imovel.renda" aria-label="">
+                <div class ng-show="dadosImovel.renda.$invalid && dadosImovel.renda.$dirt">"Digite no
+                    mínimo 3 caracteres"</div>
             </div>
-        </form>
-    </main>    
-</div>
+        </div>
+
+        <div class="col">
+            <label for="valorImovel" class="form-label"></label>
+            <input type="text" id="valorImovel" name="valorImovel" ng-required="true" class="form-control" placeholder="Valor do imóvel"
+                pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" ng-model="imovel.valorImovel" aria-label="">
+            <div class ng-show="dadosImovel.valorImovel.$invalid && dadosImovel.valorImovel.$dirty">"teste"</div>
+        </div>
+
+
+    </div>
+    <div class="row g-3 d-flex justify-content-sm-between">
+        <div class="col">
+            <label for="valorEntrada" class="form-label"></label>
+            <input type="text" id="valorEntrada" name="valorEntrada" ng-required="true" class="form-control" placeholder="Valor da entrada"
+                pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" ng-model="imovel.valorEntrada" aria-label="">
+            <div class ng-show="dadosImovel.valorEntrada.$invalid && dadosImovel.valorEntrada.$dirty">"teste"</div>
+        </div>
+        <div class="col">
+            <label for="quantdParcelas" class="form-label"></label>
+            <input type="text" id="quantdParcelas" name="quantdParcelas" ng-required="true" class="form-control" placeholder="Em quantas parcelas deseja parcelar?"
+                pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" ng-model="imovel.parcelas" aria-label="">
+            <div class ng-show="dadosImovel.quantdParcelas.$invalid && dadosImovel.quantdParcelas.$dirty">"teste"</div>
+        </div>
+       
+    </div> 
+    <div class="button-imovel">
+        <div class=" d-flex justify-content-sm-between">
+            <button ng-click="telaProponente()" type="button" class="btn btn-primary btn-sm ">VOLTAR</button>
+            <button ng-click="telaAprovado()" type="button" class="btn btn-primary btn-sm ">SIMULAR</button>
+        </div>
+
+    </div>
+</form>

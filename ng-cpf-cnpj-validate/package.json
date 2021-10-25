@@ -1,0 +1,57 @@
+{
+  "_from": "ng-cpf-cnpj-validate",
+  "_id": "ng-cpf-cnpj-validate@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha1-0UucJ0Fx1F5MNg0Hwr5mGgxWMhY=",
+  "_location": "/ng-cpf-cnpj-validate",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "ng-cpf-cnpj-validate",
+    "name": "ng-cpf-cnpj-validate",
+    "escapedName": "ng-cpf-cnpj-validate",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ng-cpf-cnpj-validate/-/ng-cpf-cnpj-validate-1.0.2.tgz",
+  "_shasum": "d14b9c274171d45e4c360d07c2be661a0c563216",
+  "_spec": "ng-cpf-cnpj-validate",
+  "_where": "C:\\Users\\mroolive\\Documents\\everis-SimuladorDeFinanciamentoDeImovel\\app",
+  "author": {
+    "name": "Alvaro Paçó",
+    "email": "alvaro@scalasoft.com.br",
+    "url": "https://github.com/ScalaSoft"
+  },
+  "bugs": {
+    "url": "https://github.com/ScalaSoft/ng-cpf-cnpj-validate/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "This package contains two directives to validate the brazilians CPF and CNPJ documents.",
+  "homepage": "https://github.com/ScalaSoft/ng-cpf-cnpj-validate",
+  "keywords": [
+    "cpf",
+    "cnpj",
+    "ng-validate",
+    "angular",
+    "js",
+    "validate"
+  ],
+  "license": "MIT",
+  "main": "validate-cnpj-directive.js",
+  "name": "ng-cpf-cnpj-validate",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScalaSoft/ng-cpf-cnpj-validate.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.2"
+}

@@ -6,6 +6,14 @@ simuladorDeFinanciamentos.controller("dadosDoProponenteController", function ($l
     $scope.telaImovel = function () {
         $location.path("/imovel")
     };
+
+    
+    //ir para tela Inicial:
+    $scope.telaInicial = function () {
+        $location.path("/home")
+    };
+
+
 });
 
 
