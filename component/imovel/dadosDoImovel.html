@@ -4,6 +4,8 @@
 <p>Dados do Imóvel </p>
 <form name="dadosImovel" class="dadosImovel container">
     <div class="row g-3 d-flex justify-content-sm-between">
+
+        <!-- tipo de imovel -->
         <div class="col">            
             <label for="tipoImovel" class="form-label"></label>
             <select class="form-control" ng-model="imovel.tipo" name="profissao"
@@ -11,7 +13,7 @@
                 <option value="">Tipo do Imóvel</option>
             </select>
         </div>
-
+        <!-- valor da renda -->
         <div class="col">
             <div class="col">
                 <label for="renda" class="form-label"></label>
@@ -23,6 +25,7 @@
             </div>
         </div>
 
+        <!-- valor do imóvel -->
         <div class="col">
             <label for="valorImovel" class="form-label"></label>
             <input type="text" id="valorImovel" name="valorImovel" ng-required="true" class="form-control" placeholder="Valor do imóvel"
@@ -33,20 +36,25 @@
 
     </div>
     <div class="row g-3 d-flex justify-content-sm-between">
+        
+        <!-- valor da entrada -->
         <div class="col">
             <label for="valorEntrada" class="form-label"></label>
             <input type="text" id="valorEntrada" name="valorEntrada" ng-required="true" class="form-control" placeholder="Valor da entrada"
                 pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" ng-model="imovel.valorEntrada" aria-label="">
             <div class ng-show="dadosImovel.valorEntrada.$invalid && dadosImovel.valorEntrada.$dirty">"teste"</div>
         </div>
+        <!-- quantidade de parcelas -->
         <div class="col">
             <label for="quantdParcelas" class="form-label"></label>
-            <input type="text" id="quantdParcelas" name="quantdParcelas" ng-required="true" class="form-control" placeholder="Em quantas parcelas deseja parcelar?"
-                pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" ng-model="imovel.parcelas" aria-label="">
-            <div class ng-show="dadosImovel.quantdParcelas.$invalid && dadosImovel.quantdParcelas.$dirty">"teste"</div>
+            <input type="number" id="quantdParcelas" min="1" max="360" pattern="[0-9]+$"  name="quantdParcelas" ng-required="true" class="form-control" placeholder="Em quantas parcelas deseja parcelar?"
+                ng-model="imovel.parcelas" aria-label="">
+            <div class ng-show="dadosImovel.quantdParcelas.$invalid && dadosImovel.quantdParcelas.$dirty">Preencha com no máximo 360 parcelas</div>
         </div>
        
     </div> 
+
+    <!-- botão -->
     <div class="button-imovel">
         <div class=" d-flex justify-content-sm-between">
             <button ng-click="telaProponente()" type="button" class="btn btn-primary btn-sm ">VOLTAR</button>
