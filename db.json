@@ -1,29 +1,112 @@
 {
-    "imovel":[
-        
-
-
-
-    ],
-
-
-    "tipoDeImovel": [
-        "casa",
-        "apartamento"
-    ]
-
-    
-
-
-
-
-
-
-
-
-
+  "imovel": [
+    {
+      "tipo": "casa",
+      "rendaImovel": "3200",
+      "valorImovel": "400000",
+      "valorEntrada": "120000",
+      "parcelas": 360,
+      "id": 1
+    },
+    {
+      "tipo": "apartamento",
+      "rendaImovel": "3200",
+      "valorImovel": "144000",
+      "valorEntrada": "20000",
+      "parcelas": 20,
+      "id": 2
+    },
+    {
+      "tipo": "casa",
+      "rendaImovel": "3200",
+      "valorImovel": "145000",
+      "valorEntrada": "10",
+      "parcelas": 2,
+      "id": 3
+    },
+    {
+      "tipo": "casa",
+      "rendaImovel": "40000",
+      "valorImovel": "20000",
+      "valorEntrada": "1000",
+      "parcelas": 20,
+      "id": 4
+    },
+    {
+      "tipo": "casa",
+      "rendaImovel": "20000",
+      "valorImovel": "500000",
+      "valorEntrada": "20000",
+      "parcelas": 2,
+      "id": 5
+    },
+    {
+      "tipo": "casa",
+      "rendaImovel": "2500",
+      "valorImovel": "300000",
+      "valorEntrada": "10000",
+      "parcelas": 20,
+      "id": 6
+    },
+    {
+      "rendaImovel": "7000",
+      "valorImovel": "500000",
+      "valorEntrada": "2000",
+      "parcelas": 20,
+      "tipo": "casa",
+      "id": 7
+    },
+    {
+      "tipo": "casa",
+      "rendaImovel": "5000",
+      "valorImovel": "10000",
+      "valorEntrada": "2000",
+      "parcelas": 100,
+      "id": 8
+    },
+    {
+      "tipo": "casa",
+      "rendaImovel": "3500",
+      "valorImovel": "250000",
+      "valorEntrada": "1",
+      "parcelas": 20,
+      "id": 9
+    },
+    {
+      "tipo": "apartamento",
+      "valorImovel": "200000",
+      "valorEntrada": 40000,
+      "parcelas": 20,
+      "rendaImovel": "2000",
+      "id": 10
+    },
+    {
+      "rendaImovel": "4000",
+      "valorImovel": "90000",
+      "valorEntrada": 18000,
+      "parcelas": 40,
+      "tipo": "casa",
+      "id": 11
+    },
+    {
+      "tipo": "casa",
+      "rendaImovel": "40000",
+      "valorImovel": "100000",
+      "valorEntrada": 20000,
+      "parcelas": 65,
+      "id": 12
+    },
+    {
+      "tipo": "casa",
+      "rendaImovel": "2200",
+      "valorImovel": "20000",
+      "valorEntrada": 20000,
+      "parcelas": 50,
+      "id": 13
+    }
+  ],
+  "tipoDeImovel": [
+    "casa",
+    "apartamento"
+  ]
 }
-
-
-
-

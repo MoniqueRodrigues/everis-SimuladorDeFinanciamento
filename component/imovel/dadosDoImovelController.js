@@ -1,18 +1,16 @@
 simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($location, $scope, $http) {
     // $scope.titulo = "teste";
 
-    
-    $scope.imovel = {
-        tipo:"" ,
-        renda:"",
-        valorImovel: "" ,
-        valorEntrada:"",
-        quantidParcelas:""
+
+    $scope.listaImoveis = {
+        tipo: "",
+        renda: "",
+        valorImovel: "",
+        valorEntrada: "",
+        quantidParcelas: ""
     };
 
-   
-
-    
+    $scope.imovel = {};
 
 
 
@@ -32,31 +30,40 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
         $location.path("/proponente")
     };
 
-
-
     //get para pegar os dados tipo de imovel e listar na tela:
     $http.get("http://localhost:3000/tipoDeImovel")
         .then(function (response) {
             $scope.tipo = response.data;
-        })
+        });
+
+    //calcula e valida campo valor entrada:
+    $scope.validaEntrada = function () {     
+        // console.log($scope.imovel.valorEntrada);  
+        var regraNegocio = 0.2;
+        $scope.resulCalculo = $scope.imovel.valorImovel * regraNegocio;
+        console.log("resultado 20%:", $scope.resulCalculo);
+    };
 
 
 
-    // cadastrar dados do imovel e enviar para o JsonServer:
-    $scope.cadastra_imovel = function (isValid) {
-        console.log("chamou")
-        if (isValid) {
-            console.log("envio de dados ok")
+    // post para cadastrar dados do imovel e enviar para o JsonServer:
+    $scope.cadastra_imovel = function (dados) {
+        // console.log(dados);
+
+        // var regraNegocio = 0.2;
+        // var valorImovelPorc = $scope.imovel.valorImovel * regraNegocio;
+        // console.log("resultado", valorImovelPorc);     
+
+        if (dados) {
+
             $http.post(
                 "http://localhost:3000/imovel",
-                JSON.stringify($scope.imovel)        
-            ).then(function(response){
-                $scope.imovel.push(response.data);           
-
-
+                JSON.stringify($scope.imovel)
+            ).then(function (response) {
+                $scope.listaImoveis.push(response.data);
             });
 
-        } else{
+        } else {
             console.log("dados inválidos")
         }
 
@@ -64,12 +71,11 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
 
 
 
-    //CRIAR FUNÇÃO QUE DIRECIONA PARA AS TELAS
-    //DE APROVADO OU NÃO DE ACORDO COM OS CALCULOS.
 
 
 
 
 
 });
+
 
