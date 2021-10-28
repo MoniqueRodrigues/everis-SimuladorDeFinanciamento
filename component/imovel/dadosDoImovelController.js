@@ -42,7 +42,7 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
         // console.log($scope.imovel.valorEntrada);  
         var regraNegocio = 0.2;
         $scope.resulCalculo = $scope.imovel.valorImovel * regraNegocio;
-        console.log("resultado 20%:", $scope.resulCalculo);
+        // console.log("resultado 20%:", $scope.resulCalculo);
     };
 
 
@@ -62,64 +62,54 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
 
     //((valor do imóvel - valor de entrada) + (((Qtd parcelas/12) * porc juros)/100) * (valor do imóvel - valor de entrada))) / Qtd parcelas <= (renda mensal * 0,3)
 
-    $scope.calculaSimulaçao = function () {
+    $scope.calculaSimulacao = function () {
+        console.log("entrou na função calculaSimulacao");
 
-        var valorTotalAprovado = $scope.imovel.valorImovel - $scope.imovel.valorEntrada;      
-        var quantdParcelasAno = $scope.imovel.parcelas / 12;      
+        var valorTotalAprovado = $scope.imovel.valorImovel - $scope.imovel.valorEntrada;
+        // console.log("valorTotalAprovado", valorTotalAprovado);
+        var quantdAnos = $scope.imovel.parcelas / 12;
+        // console.log("quantdAnos", quantdAnos);
         var taxaAno = 0.1;
+        // console.log("taxaAno", taxaAno);
         var valorDoImovel = $scope.imovel.valorImovel;
+        // console.log("valorDoImovel", valorDoImovel)
         var quantdParcelas = $scope.imovel.parcelas;
+        // console.log("quantdParcelas", quantdParcelas);
+        var taxaRendaMensal = 0.3;
+        // console.log("taxaRendaMensal", taxaRendaMensal);
+        var rendaMensal = $scope.imovel.rendaImovel;
+        // console.log("rendaMensal", rendaMensal);
+        var calculoSimulacao = (valorTotalAprovado) + (quantdAnos * taxaAno) * (valorTotalAprovado) / (quantdParcelas);
+        // console.log("calculoSimulacao", calculoSimulacao);
 
-        var calculoSimulacao = ((valorTotalAprovado) + (quantdParcelasAno * taxaAno) * (valorTotalAprovado)) / (quantdParcelas)
+        $scope.cadastra_imovel($scope.imovel);
+        
+        if ((calculoSimulacao / quantdParcelas) <= (rendaMensal * taxaRendaMensal)) {
+            
+            return $scope.telaAprovado();
+        } else {
+            return $scope.telaReprovado();
+        }
 
-
-        if(calculoSimulacao )
-
-    }
-
-
-
-
-
-
-
-    //Parcela ini
-    $scope.valorTotalAprovado *
-
-
-
-
+    };
 
 
+    // post para cadastrar dados do imovel e enviar para o JsonServer:
+    $scope.cadastra_imovel = function (dados) {    
+         
+        if (dados) {
+            $http.post(
+                "http://localhost:3000/imovel",
+                JSON.stringify($scope.imovel)
+            ).then(function (response) {
+                $scope.listaImoveis.push(response.data);
+            });
 
+        } else {
+            console.log("dados inválidos")
+        }
 
-
-
-
-
-
-
-
-
-
-
-        // post para cadastrar dados do imovel e enviar para o JsonServer:
-        $scope.cadastra_imovel = function (dados) {
-            // console.log(dados);
-            if (dados) {
-
-                $http.post(
-                    "http://localhost:3000/imovel",
-                    JSON.stringify($scope.imovel)
-                ).then(function (response) {
-                    $scope.listaImoveis.push(response.data);
-                });
-
-            } else {
-                console.log("dados inválidos")
-            }
-
-        };
+    };
 
 
 

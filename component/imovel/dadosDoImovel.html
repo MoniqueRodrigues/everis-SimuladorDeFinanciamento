@@ -19,7 +19,7 @@
             <div class="col">
                 <label for="rendaImovel" class="form-label"></label>
                 <input type="text" id="rendaImovel" name="rendaImovel" ng-required="true" class="form-control"
-                    placeholder="Renda mensal" pattern="^(?!0|\.00)[0-9]+(,\d{3})*(.[0-9]{0,2})$"
+                    placeholder="Renda mensal" pattern="^[0-9]+$"
                     ng-model="imovel.rendaImovel" aria-label="">
                 <div class ng-show="dadosImovel.rendaImovel.$invalid && dadosImovel.rendaImovel.$dirty">"teste"</div>
             </div>
@@ -34,7 +34,8 @@
             <!-- <input ng-change="validaEntrada()" type="text" id="valorImovel" name="valorImovel" ng-required="true"
                 class="form-control" placeholder="Valor do imóvel" mask-currency="'R$'"
                 config="{group:'.',decimal:',',indentation:' '}" ng-model="imovel.valorImovel" aria-label=""> -->
-            <div class ng-show="dadosImovel.valorImovel.$invalid && dadosImovel.valorImovel.$dirty">Preencha com o valor do imóvel desejado</div>
+            <div class ng-show="dadosImovel.valorImovel.$invalid && dadosImovel.valorImovel.$dirty">Preencha com o valor
+                do imóvel desejado</div>
         </div>
     </div>
 
@@ -44,7 +45,7 @@
             <label for="valorEntrada" class="form-label"></label>
             <input ng-change="validaEntrada()" type="number" id="valorEntrada" name="valorEntrada"
                 min="{{resulCalculo}}" ng-required="true" class="form-control" placeholder="Valor da entrada"
-                ng-model="imovel.valorEntrada"  aria-label="">
+                ng-model="imovel.valorEntrada" aria-label="">
             <div class ng-show="dadosImovel.valorEntrada.$invalid && dadosImovel.valorEntrada.$dirty">Preencha com no
                 mínimo 20% do valor do imóvel.</div>
         </div>
@@ -65,7 +66,9 @@
     <div class="button-imovel">
         <div class=" d-flex justify-content-sm-between">
             <button ng-click="telaProponente()" type="button" class="btn btn-primary btn-sm ">VOLTAR</button>
-            <button ng-click="cadastra_imovel(dadosImovel)" type="button" class="btn btn-primary btn-sm "
+            <!-- <button ng-click="cadastra_imovel(dadosImovel)" type="button" class="btn btn-primary btn-sm "
+                ng-disabled="dadosImovel.$invalid">SIMULAR</button> -->
+            <button ng-click="calculaSimulacao ()" type="button" class="btn btn-primary btn-sm "
                 ng-disabled="dadosImovel.$invalid">SIMULAR</button>
         </div>
 

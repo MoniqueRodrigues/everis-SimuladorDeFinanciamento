@@ -111,6 +111,22 @@
       "valorEntrada": 40000,
       "parcelas": 10,
       "id": 14
+    },
+    {
+      "tipo": "casa",
+      "rendaImovel": "2500",
+      "valorImovel": "100000",
+      "valorEntrada": 40000,
+      "parcelas": 359,
+      "id": 15
+    },
+    {
+      "tipo": "apartamento",
+      "rendaImovel": "3000",
+      "valorImovel": "100000",
+      "parcelas": 24,
+      "valorEntrada": 20000,
+      "id": 16
     }
   ],
   "tipoDeImovel": [
