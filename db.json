@@ -103,6 +103,14 @@
       "valorEntrada": 20000,
       "parcelas": 50,
       "id": 13
+    },
+    {
+      "tipo": "casa",
+      "rendaImovel": "3200",
+      "valorImovel": "200000",
+      "valorEntrada": 40000,
+      "parcelas": 10,
+      "id": 14
     }
   ],
   "tipoDeImovel": [

@@ -1,2 +1,2 @@
 'use strict';
-var simuladorDeFinanciamentos = angular.module("simuladorDeFinanciamentos", ["ngRoute"]);
+var simuladorDeFinanciamentos = angular.module("simuladorDeFinanciamentos", ['ngRoute', 'cur.$mask' ]);
