@@ -14,12 +14,6 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
 
 
 
-    //ir para tela Aprovado:
-    $scope.telaAprovado = function () {
-        $location.path("/aprovado")
-    };
-
-
     //ir para tela Reprovado:
     $scope.telaReprovado = function () {
         $location.path("/reprovado")
@@ -48,19 +42,8 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
 
 
 
-    //calculo valor pré-aprovado:
-    valorTotalAprovado = $scope.imovel.valorImovel - $scope.imovel.valorEntrada;
-    //quantidade de parcelas ao ano:
-    quantdParcelasAno = $scope.imovel.parcelas / 12;
-    //taxa de juros ao ano:
-    var taxaAno = 0.1;
-    valorDoImovel = $scope.imovel.valorImovel;
-    quantdParcelas = $scope.imovel.parcelas;
-
-
-
-
     //((valor do imóvel - valor de entrada) + (((Qtd parcelas/12) * porc juros)/100) * (valor do imóvel - valor de entrada))) / Qtd parcelas <= (renda mensal * 0,3)
+
 
     $scope.calculaSimulacao = function () {
         console.log("entrou na função calculaSimulacao");
@@ -74,19 +57,21 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
         var valorDoImovel = $scope.imovel.valorImovel;
         // console.log("valorDoImovel", valorDoImovel)
         var quantdParcelas = $scope.imovel.parcelas;
-        // console.log("quantdParcelas", quantdParcelas);
+        console.log("quantdParcelas", quantdParcelas);
         var taxaRendaMensal = 0.3;
         // console.log("taxaRendaMensal", taxaRendaMensal);
         var rendaMensal = $scope.imovel.rendaImovel;
         // console.log("rendaMensal", rendaMensal);
         var calculoSimulacao = (valorTotalAprovado) + (quantdAnos * taxaAno) * (valorTotalAprovado) / (quantdParcelas);
-        // console.log("calculoSimulacao", calculoSimulacao);
+        var parcelaInicial = calculoSimulacao / quantdParcelas;
+        console.log("parcelaInicial", parcelaInicial);
 
-        $scope.cadastra_imovel($scope.imovel);
-        
-        if ((calculoSimulacao / quantdParcelas) <= (rendaMensal * taxaRendaMensal)) {
-            
-            return $scope.telaAprovado();
+        // $scope.cadastra_imovel($scope.imovel);
+
+        if (parcelaInicial <= rendaMensal * taxaRendaMensal) {
+            //chamando a function enviando as variaveis
+            return $scope.telaAprovado(parcelaInicial,valorTotalAprovado);
+
         } else {
             return $scope.telaReprovado();
         }
@@ -94,9 +79,49 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
     };
 
 
+
+    //ir para tela Aprovado:
+    $scope.telaAprovado = function (parcelaInicial, valorTotalAprovado) {
+        //recebendo na função os parametros enviados, pode ser qualqeur nome respeitando
+        // a ordem de envio
+
+        //preparando o objeto de envio:
+        var enviarObjeto = {
+            parcelaInicial: parcelaInicial,
+            valorTotalAprovado: valorTotalAprovado            
+        };
+        console.log("objeto criado", enviarObjeto);
+
+
+        //enviando o objeto no search para ficar disponivel na outra tela:
+        $location.search(enviarObjeto);
+     
+
+        //chama a proxima tela
+        $location.path("/aprovado")
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // post para cadastrar dados do imovel e enviar para o JsonServer:
-    $scope.cadastra_imovel = function (dados) {    
-         
+    $scope.cadastra_imovel = function (dados) {
         if (dados) {
             $http.post(
                 "http://localhost:3000/imovel",

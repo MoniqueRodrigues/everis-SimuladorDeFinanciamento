@@ -127,6 +127,38 @@
       "parcelas": 24,
       "valorEntrada": 20000,
       "id": 16
+    },
+    {
+      "tipo": "casa",
+      "rendaImovel": "2500",
+      "valorImovel": "220000",
+      "valorEntrada": 44000,
+      "parcelas": 10,
+      "id": 17
+    },
+    {
+      "tipo": "apartamento",
+      "rendaImovel": "10000",
+      "valorImovel": "100000",
+      "valorEntrada": 20000,
+      "parcelas": 36,
+      "id": 18
+    },
+    {
+      "tipo": "casa",
+      "rendaImovel": "10000",
+      "valorImovel": "100000",
+      "valorEntrada": 20000,
+      "parcelas": 36,
+      "id": 19
+    },
+    {
+      "tipo": "casa",
+      "rendaImovel": "10000",
+      "valorImovel": "100000",
+      "valorEntrada": 20000,
+      "parcelas": 36,
+      "id": 20
     }
   ],
   "tipoDeImovel": [
