@@ -1,18 +1,9 @@
 simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($location, $scope, $http) {
-    // $scope.titulo = "teste";
 
 
-    $scope.listaImoveis = {
-        tipo: "",
-        renda: "",
-        valorImovel: "",
-        valorEntrada: "",
-        quantidParcelas: ""
-    };
-
-    $scope.imovel = {};
-
-
+    // recebendo dados do Proponente:
+    var dadosDaProposta = $location.search().dadosDaProposta;
+    // console.log("dadosrecebidos:", search );
 
     //ir para tela Reprovado:
     $scope.telaReprovado = function () {
@@ -40,42 +31,43 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
     };
 
 
-
-
-    //((valor do imóvel - valor de entrada) + (((Qtd parcelas/12) * porc juros)/100) * (valor do imóvel - valor de entrada))) / Qtd parcelas <= (renda mensal * 0,3)
-
-
     $scope.calculaSimulacao = function () {
         console.log("entrou na função calculaSimulacao");
 
         var valorTotalAprovado = $scope.imovel.valorImovel - $scope.imovel.valorEntrada;
-        // console.log("valorTotalAprovado", valorTotalAprovado);
         var quantdAnos = $scope.imovel.parcelas / 12;
-        // console.log("quantdAnos", quantdAnos);
         var taxaAno = 0.1;
-        // console.log("taxaAno", taxaAno);
         var valorDoImovel = $scope.imovel.valorImovel;
-        // console.log("valorDoImovel", valorDoImovel)
         var quantdParcelas = $scope.imovel.parcelas;
         console.log("quantdParcelas", quantdParcelas);
         var taxaRendaMensal = 0.3;
-        // console.log("taxaRendaMensal", taxaRendaMensal);
         var rendaMensal = $scope.imovel.rendaImovel;
-        // console.log("rendaMensal", rendaMensal);
         var calculoSimulacao = (valorTotalAprovado) + (quantdAnos * taxaAno) * (valorTotalAprovado) / (quantdParcelas);
         var parcelaInicial = calculoSimulacao / quantdParcelas;
-        console.log("parcelaInicial", parcelaInicial);
 
-        // $scope.cadastra_imovel($scope.imovel);
+
 
         if (parcelaInicial <= rendaMensal * taxaRendaMensal) {
-            //chamando a function enviando as variaveis
-            return $scope.telaAprovado(parcelaInicial,valorTotalAprovado);
+            var statusDaSimulacao = "aprovada";
 
+            dadosDaProposta.statusDaSimulacao = statusDaSimulacao;
+            dadosDaProposta.imovel = $scope.imovel;
+
+            console.log("resultado", $location.search());
+
+            //envia dados para o json.server:
+            $scope.enviaProposta(dadosDaProposta);
+
+
+            // return $scope.telaAprovado(parcelaInicial, valorTotalAprovado);
         } else {
-            return $scope.telaReprovado();
-        }
+            var statusDaSimulacao = "reprovado";
+            dadosDaProposta.statusDaSimulacao = statusDaSimulacao;
+            dadosDaProposta.imovel = $scope.imovel;
 
+
+            // return $scope.telaReprovado();
+        }
     };
 
 
@@ -85,17 +77,18 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
         //recebendo na função os parametros enviados, pode ser qualqeur nome respeitando
         // a ordem de envio
 
+
         //preparando o objeto de envio:
         var enviarObjeto = {
             parcelaInicial: parcelaInicial,
-            valorTotalAprovado: valorTotalAprovado            
+            valorTotalAprovado: valorTotalAprovado
         };
         console.log("objeto criado", enviarObjeto);
 
 
         //enviando o objeto no search para ficar disponivel na outra tela:
         $location.search(enviarObjeto);
-     
+
 
         //chama a proxima tela
         $location.path("/aprovado")
@@ -103,38 +96,23 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // post para cadastrar dados do imovel e enviar para o JsonServer:
-    $scope.cadastra_imovel = function (dados) {
-        if (dados) {
-            $http.post(
-                "http://localhost:3000/imovel",
-                JSON.stringify($scope.imovel)
-            ).then(function (response) {
-                $scope.listaImoveis.push(response.data);
-            });
+    $scope.enviaProposta = function (dados) {
+        alert(JSON.stringify())
+        // if (dados) {
+        $http.post(
+            "http://localhost:3000/propostas",
+            JSON.stringify(dadosDaProposta)
+        ).then(function (response) {
+            // $scope.listaImoveis.push(response.data);
+        });
 
-        } else {
-            console.log("dados inválidos")
-        }
+        // } else {
+        //    console.log("dados inválidos")
+        //}
 
     };
+
 
 
 

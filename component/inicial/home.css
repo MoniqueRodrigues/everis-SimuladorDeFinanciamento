@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container-principal {
+    background-color: #ffff;
+    height: 220px;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+.container-textoHome {
+    padding-top: 10px;
+}
+
+.subTitulo {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.texto-home {
+    text-align: center;
+    font-weight: 700;
+    margin: 1px;
+}

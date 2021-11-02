@@ -1,12 +1,13 @@
 <!-- DADOS DO IMÓVEL -->
 <!-- {{titulo}} -->
 
-<p>Dados do Imóvel </p>
-<form name="dadosImovel" class="dadosImovel container">
-    <div class="row g-3 d-flex justify-content-sm-between">
+<p class="tela-informativa">Dados do Imóvel </p>
+<form name="dadosImovel" class="dadosImovel container-form">
+
+    <div class="row g-3 d-flex justify-content-lg-around">
 
         <!-- tipo de imovel -->
-        <div class="col">
+        <div class="col col-md-3">
             <label for="tipoImovel" class="form-label"></label>
             <select class="form-control" ng-model="imovel.tipo" name="tipoImovel"
                 ng-options="listaImoveis for listaImoveis in tipo" ng-required="true">
@@ -15,18 +16,16 @@
         </div>
 
         <!-- valor da renda -->
-        <div class="col">
-            <div class="col">
-                <label for="rendaImovel" class="form-label"></label>
-                <input type="text" id="rendaImovel" name="rendaImovel" ng-required="true" class="form-control"
-                    placeholder="Renda mensal" pattern="^[0-9]+$"
-                    ng-model="imovel.rendaImovel" aria-label="">
-                <div class ng-show="dadosImovel.rendaImovel.$invalid && dadosImovel.rendaImovel.$dirty">"teste"</div>
-            </div>
+        <div class="col col-md-3">
+            <label for="rendaImovel" class="form-label"></label>
+            <input type="text" id="rendaImovel" name="rendaImovel" ng-required="true" class="form-control"
+                placeholder="Renda mensal" pattern="^[0-9]+$" ng-model="imovel.rendaImovel" aria-label="">
+            <div class ng-show="dadosImovel.rendaImovel.$invalid && dadosImovel.rendaImovel.$dirty">Preencha com a sua
+                renda mensal</div>
         </div>
 
         <!-- valor do imóvel -->
-        <div class="col">
+        <div class="col col-md-3">
             <label for="valorImovel" class="form-label"></label>
             <input ng-change="validaEntrada()" type="text" id="valorImovel" name="valorImovel" ng-required="true"
                 class="form-control" placeholder="Valor do imóvel" pattern="^[0-9]+$" ng-model="imovel.valorImovel"
@@ -39,9 +38,9 @@
         </div>
     </div>
 
-    <div class="row g-3 d-flex justify-content-sm-between">
+    <div class="row g-3 d-flex justify-content-lg-around">
         <!-- valor da entrada -->
-        <div class="col">
+        <div class="col col-md-3">
             <label for="valorEntrada" class="form-label"></label>
             <input ng-change="validaEntrada()" type="number" id="valorEntrada" name="valorEntrada"
                 min="{{resulCalculo}}" ng-required="true" class="form-control" placeholder="Valor da entrada"
@@ -51,7 +50,7 @@
         </div>
 
         <!-- quantidade de parcelas -->
-        <div class="col">
+        <div class="col col-md-3">
             <label for="quantdParcelas" class="form-label"></label>
             <input type="number" id="quantdParcelas" min="1" max="360" pattern="[0-9]+$" name="quantdParcelas"
                 ng-required="true" class="form-control" placeholder="Em quantas parcelas deseja parcelar?"
@@ -65,10 +64,9 @@
     <!-- botão -->
     <div class="button-imovel">
         <div class=" d-flex justify-content-sm-between">
-            <button ng-click="telaProponente()" type="button" class="btn btn-primary btn-sm ">VOLTAR</button>
-            <!-- <button ng-click="cadastra_imovel(dadosImovel)" type="button" class="btn btn-primary btn-sm "
-                ng-disabled="dadosImovel.$invalid">SIMULAR</button> -->
-            <button ng-click="calculaSimulacao()" type="button" class="btn btn-primary btn-sm "
+            <button ng-click="telaProponente()" type="button"
+                class="btn btn-primary btn-sm btnProp-imovel ">VOLTAR</button>
+            <button ng-click="calculaSimulacao()" type="button" class="btn btn-primary btn-sm btnProp-imovel "
                 ng-disabled="dadosImovel.$invalid">SIMULAR</button>
         </div>
 

@@ -15,8 +15,10 @@
         crossorigin="anonymous"></script>
 
     <!-- css -->
-    <!-- <link rel="stylesheet" href="./style.css"> -->
-    <!-- <link rel="stylesheet" href="style.modal.css"> -->
+    <link rel="stylesheet" href="style-geral/style.css">
+    <link rel="stylesheet" href="component/inicial/home.css">
+    <link rel="stylesheet" href="component/proponente/proponente.css">
+
 
     <!-- angular -->
     <script src="lib/angular/angular.js"></script>
@@ -26,28 +28,29 @@
     <!-- configuração -->
     <script src="config/myApp.module.js"></script>
     <script src="config/routeConfig.js"></script>
-    
-  
 
     <!-- telas -->
     <script src="component/inicial/homeController.js"></script>
     <script src="component/proponente/dadosDoProponenteController.js"></script>
     <script src="component/aprovado/resultadoAprovadoController.js"></script>
     <script src="component/reprovado/resultadoReprovadoController.js"></script>
-    <script src="component/imovel/dadosDoImovelController.js"></script>    
+    <script src="component/imovel/dadosDoImovelController.js"></script>
 
-   
-    
-    
+    <!-- services -->
+    <!-- <script src="services/propostasAPIService.js"></script> -->
 </head>
 
 <body>
-    <header>
-        <div>
-            <img src="" alt="logotipo da empresa">
-            <h4>Simulador de financiamentos</h4>
-        </div>
-    </header>
+    <nav>
+        <figure>
+            <img class="image-logo" src="image/logo.png" alt="logotipo da empresa">
+        </figure>
+        <div class="container-titulo">
+            <h4 class="titulo-Menu">Simulador de financiamentos</h4>
+        </div>     
+        
+    </nav>
+
     <div ng-view></div>
 
 </body>
