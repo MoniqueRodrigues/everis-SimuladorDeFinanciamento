@@ -10,10 +10,7 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
         $location.path("/reprovado")
     };
 
-    //ir para tela Proponente:
-    $scope.telaProponente = function () {
-        $location.path("/proponente")
-    };
+
 
 
     //get para pegar os dados tipo de imovel e listar na tela:
@@ -88,13 +85,9 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
 
         //enviando o objeto no search para ficar disponivel na outra tela:
         $location.search(enviarObjeto);
-
-
         //chama a proxima tela
         $location.path("/aprovado")
     };
-
-
 
     // post para cadastrar dados do imovel e enviar para o JsonServer:
     $scope.enviaProposta = function (dados) {
@@ -112,6 +105,38 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
         //}
 
     };
+
+
+    //ir para tela Proponente:
+    $scope.telaProponente = function () {
+        $scope.carregaDadosProponente();
+        // retornaDadosProponente();
+        $location.path("/proponente")
+    };
+
+
+
+    // enviar o objeto recebido de proponente para a tela de proponente:
+    var dadosDaProposta =$location.search({ dadosDaProposta });
+
+    $scope.carregaDadosProponente = function () {
+        if (dadosDaProposta != undefined) {
+            $scope.proponente = dadosDaProposta;
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -5,23 +5,31 @@ simuladorDeFinanciamentos.controller("dadosDoProponenteController", function ($l
 
         var dadosDaProposta = {
             dadosProponente: $scope.proponente
-        }
-
-
+        };
         //enviando o objeto no search para ficar disponivel na outra tela:
         $location.search({
             dadosDaProposta
-
         });
-
         //chama a proxima tela
         $location.path("/imovel")
     };
+    
 
     //ir para tela Inicial:
     $scope.telaInicial = function () {
         $location.path("/home")
     };
+
+
+    //RECEBENDO OS DADOS DO PROPONENTE E IMOVEIS:     
+    var dadosDaProposta= $location.search().dadosDaProposta;
+    console.log("dadosDaProposta recebidos:", dadosDaProposta);
+
+    
+    
+
+    
+
 
 
 
