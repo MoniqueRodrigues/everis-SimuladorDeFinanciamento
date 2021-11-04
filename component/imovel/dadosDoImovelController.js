@@ -1,38 +1,42 @@
 simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($location, $scope, $http) {
 
+    //#region Método Inicial
 
     // RECEBENDO OS DADOS DO PROPONENTE:
     var dadosDaProposta = $location.search().dadosDaProposta;
-    // console.log("dadosrecebidos:", search );
+    console.log("dadosDaProposta", dadosDaProposta)
 
-    
+    //carregar informações imóvel vindas da tela proponente:
+    if (dadosDaProposta.imovel) {
+        $scope.imovel = dadosDaProposta.imovel;
+    }
+    //#endregion Método Inicial
+
+
+
+    //GET PARA PEGAR OS DADOS TIPO DE IMOVEL E LISTAR NA TELA IMÓVEL: 
+    $http.get("http://localhost:3000/tipoDeImovel")
+        .then(function (response) {
+            $scope.tipo = response.data;
+        }
+        );
+
+
     //IR PARA A TELA DE REPROVADO:
     $scope.telaReprovado = function () {
         $location.path("/reprovado")
     };
 
-
-    //GET PARA PEGAR OS DADOS TIPO DE IMOVEL E LISTAR NA TELA: 
-    $http.get("http://localhost:3000/tipoDeImovel")
-        .then(function (response) {
-            $scope.tipo = response.data;
-        });
-
-
-        
-    //calcula e valida campo valor entrada:
+    //CALCULA E VALIDA CAMPO VALOR DE ENTRADA:
     $scope.validaEntrada = function () {
-        // console.log($scope.imovel.valorEntrada);  
         var regraNegocio = 0.2;
         $scope.resulCalculo = $scope.imovel.valorImovel * regraNegocio;
-        // console.log("resultado 20%:", $scope.resulCalculo);
     };
 
 
-
-    //CALCULA SIMULAÇÃO:
+    //CALCULA SIMULAÇÃO FINANCIAMENTO:
     $scope.calculaSimulacao = function () {
-        console.log("entrou na função calculaSimulacao");
+
 
         var valorTotalAprovado = $scope.imovel.valorImovel - $scope.imovel.valorEntrada;
         var quantdAnos = $scope.imovel.parcelas / 12;
@@ -46,18 +50,16 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
         var parcelaInicial = calculoSimulacao / quantdParcelas;
 
 
-
         if (parcelaInicial <= rendaMensal * taxaRendaMensal) {
+
             var statusDaSimulacao = "aprovada";
 
             dadosDaProposta.statusDaSimulacao = statusDaSimulacao;
             dadosDaProposta.imovel = $scope.imovel;
 
-            console.log("resultado", $location.search());
-
             //envia dados para o json.server:
             $scope.enviaProposta(dadosDaProposta);
-            
+
             return $scope.telaAprovado(parcelaInicial, valorTotalAprovado);
         }
         else {
@@ -68,29 +70,24 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
         }
     };
 
-
-
     //ir para tela Aprovado:
     $scope.telaAprovado = function (parcelaInicial, valorTotalAprovado) {
         //recebendo na função os parametros enviados, pode ser qualqeur nome respeitando
         // a ordem de envio
 
-
         //preparando o objeto de envio:
         var enviarObjeto = {
             parcelaInicial: parcelaInicial,
             valorTotalAprovado: valorTotalAprovado
-        };
-        console.log("objeto criado", enviarObjeto);
+        };    
 
-
-        //enviando o objeto no search para ficar disponivel na outra tela:
+        //enviando o objeto no search para ficar disponivel na tela de aprovado:
         $location.search(enviarObjeto);
         //chama a proxima tela
         $location.path("/aprovado")
     };
 
-    // post para cadastrar dados do imovel e enviar para o JsonServer:
+    // ENVIA DADOS PARA O BANCO DE DADOS:
     $scope.enviaProposta = function (dados) {
         alert(JSON.stringify())
         // if (dados) {
@@ -107,46 +104,25 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
 
     };
 
-
     //ir para tela Proponente:
     $scope.telaProponente = function () {
-        $scope.carregaDadosProponente();
+
+        // colocandoOsDadosPreenchidosNoObj
+        dadosDaProposta.imovel = $scope.imovel
+
+        // mandar obj para o search
+        $location.search({
+            dadosDaProposta
+        });
+
         // retornaDadosProponente();
         $location.path("/proponente")
     };
-
-
-
-    // enviar o objeto recebido de proponente para a tela de proponente:
-    var dadosDaProposta = $location.search({ dadosDaProposta });
-
-    $scope.carregaDadosProponente = function () {
-        if (dadosDaProposta != undefined) {
-            $scope.proponente = dadosDaProposta;
-        }
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
+
+
+
+
+
 
 

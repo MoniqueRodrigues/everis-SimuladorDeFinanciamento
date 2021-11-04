@@ -1,7 +1,4 @@
 <!-- DADOS DO PROPONENTE -->
-<!-- {{titulo}} -->
-
-
 <p class="tela-informativa">Dados do proponente </p>
 <form name="dadosProponente" class="dadosProponente container-form">
 
@@ -12,7 +9,7 @@
             <label for="nomeCompleto" class="form-label"></label>
             <input type="text" id="nome" name="nomeCompleto" minlength="3" ng-required="true" class="form-control"
                 placeholder="Nome completo" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"
-                ng-model="proponente.nomeCompleto" aria-label="">
+                ng-model="proponente.nomeCompleto" ng-model-options="{ getterSetter: true }" aria-label="">
             <div class ng-show="dadosProponente.nomeCompleto.$invalid && dadosProponente.nomeCompleto.$dirty">
                 Preencha com seu nome completo</div>
 

@@ -1,7 +1,30 @@
 {
   "propostas": [
-    
+    {
+      "proponente": {
+        "nomeCompleto": "testeB",
+        "profissao": "testeB",
+        "cpf": "22580124810",
+        "email": "testeA@gmail.com",
+        "aniversario": "1982-04-01T03:00:00.000Z",
+        "cep": "08270-090",
+        "celular": "11966537734"
+      },
+      "imovel": {
+        "tipo": "casa",
+        "rendaImovel": "10000",
+        "valorImovel": "100000",
+        "valorEntrada": 20000,
+        "parcelas": 36
+      },
+      "statusDaSimulacao": "aprovada",
+      "id": 1
+    }
   ],
+
+
+
+  
   "tipoDeImovel": [
     "casa",
     "apartamento"
