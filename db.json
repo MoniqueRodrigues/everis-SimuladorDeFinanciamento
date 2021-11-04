@@ -19,12 +19,68 @@
       },
       "statusDaSimulacao": "aprovada",
       "id": 1
+    },
+    {
+      "proponente": {
+        "nomeCompleto": "testeb",
+        "profissao": "testeb",
+        "cpf": "22580124810",
+        "email": "monique@gmail.com",
+        "aniversario": "1982-04-01T03:00:00.000Z",
+        "cep": "08270-090",
+        "celular": "11966537734"
+      },
+      "statusDaSimulacao": "aprovada",
+      "imovel": {
+        "tipo": "casa",
+        "rendaImovel": "10000",
+        "valorImovel": "100000",
+        "valorEntrada": 20000,
+        "parcelas": 36
+      },
+      "id": 2
+    },
+    {
+      "proponente": {
+        "nomeCompleto": "Mo R",
+        "profissao": "Mo R",
+        "cpf": "22580124810",
+        "email": "mon@gmail.com",
+        "aniversario": "2021-04-01T03:00:00.000Z",
+        "cep": "08270-090",
+        "celular": "11966537734"
+      },
+      "statusDaSimulacao": "aprovada",
+      "imovel": {
+        "tipo": "casa",
+        "rendaImovel": "10000",
+        "valorImovel": "100000",
+        "valorEntrada": 20000,
+        "parcelas": 36
+      },
+      "id": 3
+    },
+    {
+      "proponente": {
+        "nomeCompleto": "bbbbbbb",
+        "profissao": "bbbbbbb",
+        "cpf": "22580124810",
+        "email": "mom@gma.com",
+        "aniversario": "1982-04-01T03:00:00.000Z",
+        "cep": "08270-090",
+        "celular": "11966537734"
+      },
+      "statusDaSimulacao": "aprovada",
+      "imovel": {
+        "tipo": "casa",
+        "rendaImovel": "10000",
+        "valorImovel": "100000",
+        "valorEntrada": 20000,
+        "parcelas": 360
+      },
+      "id": 4
     }
   ],
-
-
-
-  
   "tipoDeImovel": [
     "casa",
     "apartamento"

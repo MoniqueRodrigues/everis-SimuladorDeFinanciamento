@@ -1,23 +1,24 @@
 <!-- APROVADO -->
 <div>
-    <p>Aprovado</p>
-<main class="container-principal">
-    <div>
-        <p>Proposta Nº 00001</p>
-    </div>
-    <div>
-        <img src="" alt="imagem com o status de aprovado">
-    </div>
-    <div>
-        <ul>
-            <li> Taxa de 8% ao ano para correntistas</li>
-            <li> Taxa de 10% ao ano para não correntistas</li>
-            <li> Parcela inicial R$ {{dadosDoImovel.parcelaInicial}}</li>
-            <li>Valor total aprovado: R$ {{dadosDoImovel.valorTotalAprovado}}</li>
-            <li>Seguro Só Vamu Security</li>
-            <li>Desconto na primeira e na última parcela</li>
-        </ul>
-        <button ng-click="telaInicial()"type="button" class="btn btn-primary btn-sm btnGeral">IR PARA A TELA INICIAL</button>
-    </div>
-</main>
+    <p class="tela-informativa">Aprovado</p>
+    <main class="container-resultado">
+        <div>
+            <p class="proposta-num">Proposta Nº 00001</p>
+        </div>
+
+        <img class="img-resultado" src="../../image/aprovado.png" alt="imagem com o status de aprovado">
+        <p class="status-texto aprovado">STATUS: APROVADO</p>
+
+        <div class="informacoes-resultado">            
+                <p>. Taxa de 8% ao ano para correntistas</p>
+                <p>. Taxa de 10% ao ano para não correntistas</p>
+                <p>. Parcela inicial R$ {{dadosDoImovel.parcelaInicial}}</p>
+                <p>. Valor total aprovado: R$ {{dadosDoImovel.valorTotalAprovado}}</p>
+                <p>. Seguro Só Vamu Security</p>
+                <p>. Desconto na primeira e na última parcela</p>
+            
+            <button ng-click="telaInicial()" type="button" class="btn btn-primary btn-sm btnGeral">IR PARA A TELA
+                INICIAL</button>
+        </div>
+    </main>
 </div>

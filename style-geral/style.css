@@ -52,16 +52,13 @@ nav {
     padding: 5px solid #6200EE;
 }
 
-
-
 .container-form {
     background-color: #ffff;
     height: 280px;
     border-radius: 4px;
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 20px;  
-    
+    margin-top: 20px;
 }
 
 /* BOTAO */
@@ -71,7 +68,7 @@ nav {
     border: #6200EE;
     display: flex;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .btnGeral:hover {
@@ -82,14 +79,66 @@ nav {
     color: #6200EE;
     margin-left: 60px;
     margin-right: 60px;
-    border:#6200EE;
+    border: #6200EE;
     border: solid 1px #6200EE;
-    background-color:transparent; 
-        
+    background-color: transparent;
 }
 
 .btnProp-imovel:hover {
     background-color: #6200EE;
     border: solid 1px #6200EE;
+}
+
+/* RESULTADO */
+
+.proposta-num {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+}
+
+.img-resultado {
+    display: flex;
+    margin: auto;
+    margin-top:30px;
+    width: 40px;
+}
+
+.status-texto {
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.status-texto.aprovado {
+    color: #A5D76E;
+}
+
+.status-texto.reprovado {
+    color: #AE0000;
+}
+
+.container-resultado{
+    background-color: #ffff;
+    height:400px;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+
+
+.informacoes-resultado{
+    text-align: center;
+    font-weight: bold; 
+    margin-top: 20px;
+    line-height: 10px;
 
 }
+
+.informacoes-resultado.instrucoes{
+    margin-top: 50px;
+}
+

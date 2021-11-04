@@ -89,7 +89,7 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
 
     // ENVIA DADOS PARA O BANCO DE DADOS:
     $scope.enviaProposta = function (dados) {
-        alert(JSON.stringify())
+        (JSON.stringify())
         // if (dados) {
         $http.post(
             "http://localhost:3000/propostas",

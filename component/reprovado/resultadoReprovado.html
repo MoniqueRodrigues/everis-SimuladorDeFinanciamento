@@ -1,26 +1,28 @@
 <!-- REPROVADO -->
-<p>Reprovado</p>
-<main>
+<p class="tela-informativa">Reprovado</p>
+<main class="container-resultado">
     <div>
-        <p>Proposta Nº 00001</p>
+        <p class="proposta-num">Proposta Nº 00001</p>
     </div>
     <div>
-        <img src="" alt="imagem com o status de aprovado">
-        <p> STATUS: REPROVADO</p>
+        <img class="img-resultado" src="../../image/reprovado.png" alt="imagem com o status de aprovado">
+        <p class="status-texto reprovado"> STATUS: REPROVADO</p>
     </div>
-    <div>
+    <div class="informacoes-resultado">
         <div>
             <p> Infelizmente não foi possível aprovar seu financiamento.</p>
             <p>Não desanime, reunimos dicas que podem ajudar na sua próxima simulação:</p>
         </div>
-        <ul>
-            <li> Mantenha seu CPF em dia e sem restrições.</li>
-            <li> Dados de endereço, e-mail, telefone sempre atualizados.</li>
-            <li> Melhore seu relacionamento com o banco, movimentando sua conta</li>
-
-        </ul>
-        <button ng-click="telaInicial()" type="button" class="btn btn-primary btn-sm btnGeral">IR PARA A TELA INICIAL</button>
+        <div class="informacoes-resultado instrucoes">
+            <p> . Mantenha seu CPF em dia e sem restrições.</p>
+            <p> . Dados de endereço, e-mail, telefone sempre atualizados.</p>
+            <p> . Melhore seu relacionamento com o banco, movimentando sua conta</p>
+        </div>
 
 
-    </div>
+        <button ng-click="telaInicial()" type="button" class="btn btn-primary btn-sm btnGeral">IR PARA A TELA
+            INICIAL</button>
+
+
+
 </main>
