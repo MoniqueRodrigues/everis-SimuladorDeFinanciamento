@@ -40,6 +40,19 @@ simuladorDeFinanciamentos.controller("dadosDoProponenteController", function ($l
     $scope.telaInicial = function () {
         $location.path("/home")
     };
+
+
+
+    // var formControl =document.querySelector(".form-control");
+    // console.log("form-control:", formControl);
+    // $scope.mudaCor =function(){
+    //     if(){
+
+    //     }
+
+    // }
+
+
 });
 
 
