@@ -23,6 +23,14 @@ angular.module("simuladorDeFinanciamentos")
                 templateUrl: "../component/reprovado/resultadoReprovado.html",
                 controller: 'resultadoReprovadoController'
             })
+            .when("/historico",{
+                templateUrl:"../component/historico/historico.html",
+                controller:'historicoPropostaController'
+            })
+            .when("/botaoHistorico",{
+                templateUrl:"../component/historico/botaoHistorico.html",
+                controller:'botaoPropostaController'
+            })         
             .otherwise({ redirectTo: '/home' })
     }
     ]);

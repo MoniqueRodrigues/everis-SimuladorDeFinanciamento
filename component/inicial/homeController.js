@@ -3,10 +3,13 @@ simuladorDeFinanciamentos.controller("homeController", function ($location, $sco
     $scope.titulo = "teste controller";
 
 
-    //ir para tela proponente:
+    // IR PARA A TELA PROPONENTE:
     $scope.telaProponente = function () {
         $location.path("/proponente")
     };
+
+    
+
 
 });
 

@@ -1,5 +1,6 @@
 simuladorDeFinanciamentos.controller("dadosDoProponenteController", function ($location, $scope, $http) {
 
+
     //#region Método Inicial
 
     //RECEBENDO OS DADOS DO PROPONENTE:     
@@ -11,49 +12,94 @@ simuladorDeFinanciamentos.controller("dadosDoProponenteController", function ($l
         $scope.proponente = dadosDaProposta.proponente;
     }
 
-    //#endregion Metodo Inicial
+    //#endregion Metodo Inicial    
+
+
+    //MÁSCARA DE CPF:   
+    $(document).ready(function () {
+        var $seuCampoCpf = $("#cpf");
+        $seuCampoCpf.mask('000.000.000-00', { reverse: true });
+    });
+
+
+    //MÁSCARA DE CEP:   
+    $(document).ready(function () {
+        var $seuCampoCep = $("#cep");
+        $seuCampoCep.mask('00000-000', { reverse: true });
+    });
+
+
+    //MÁSCARA DE CELULAR:   
+    $(document).ready(function () {
+        var $seuCampoCelular = $("#celular");
+        $seuCampoCelular.mask('00 00000-0000', { reverse: true });
+    });
+
+
+    // //MÁSCARA VALOR ENTRADA:   
+    // $(document).ready(function () { 
+    //     var $seuCampoEntrada = $("#valorEntrada");
+    //     $seuCampoEntrada.mask('00000,00', {reverse: true});
+    // });
+
+
+    // $( "#valorEntrada" ).blur(function() {
+    //     this.value = parseFloat(this.value).toFixed(2);
+    // });
+    
+
+    // $(document).ready(function () {
+    //     var $seuCampoEntrada = $("#valorEntrada");
+    //     $seuCampoEntrada.mask('00.000', { reverse: true });
+    // });
+
+
+
+
+
+
 
 
     //ir para tela imovel:
     $scope.telaimovel = function () {
-        // se ele existir atribui
-        if (dadosDaProposta) {
-            dadosDaProposta.proponente = $scope.proponente;    
-        // se nao existir
-        // define dadosDaProposta atribuindo o valor do $scopoe para o proponente
-        } else {
-            dadosDaProposta = {
-                proponente: $scope.proponente
-            }
-        }
-        //dadosDaProposta.dadosProponente = $scope.proponente;
-        
-        //enviando o objeto no search para ficar disponivel na outra tela:
-        $location.search({
-            dadosDaProposta
+                // se ele existir atribui
+                if (dadosDaProposta) {
+                    dadosDaProposta.proponente = $scope.proponente;
+                    // se nao existir
+                    // define dadosDaProposta atribuindo o valor do $scopoe para o proponente
+                } else {
+                    dadosDaProposta = {
+                        proponente: $scope.proponente
+                    }
+                }
+                //dadosDaProposta.dadosProponente = $scope.proponente;
+
+                //enviando o objeto no search para ficar disponivel na outra tela:
+                $location.search({
+                    dadosDaProposta
+                });
+                //chama a proxima tela
+                $location.path("/imovel")
+            };
+
+            //ir para tela Inicial:
+            $scope.telaInicial = function () {
+                $location.path("/home")
+            };
+
+
+
+            // var formControl =document.querySelector(".form-control");
+            // console.log("form-control:", formControl);
+            // $scope.mudaCor =function(){
+            //     if(){
+
+            //     }
+
+            // }
+
+
         });
-        //chama a proxima tela
-        $location.path("/imovel")
-    };
-
-    //ir para tela Inicial:
-    $scope.telaInicial = function () {
-        $location.path("/home")
-    };
-
-
-
-    // var formControl =document.querySelector(".form-control");
-    // console.log("form-control:", formControl);
-    // $scope.mudaCor =function(){
-    //     if(){
-
-    //     }
-
-    // }
-
-
-});
 
 
 

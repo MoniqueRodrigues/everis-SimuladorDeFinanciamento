@@ -28,8 +28,8 @@
             <!-- cpf -->
             <div class="col-4 col-sm-6 col-6 col-lg-4">
                 <label for="cpf" class="form-label">CPF</label>
-                <input type="text" id="cpf" name="cpf" ng-required="true" class="form-control" placeholder="CPF"
-                    pattern="[0-9]{11}" ng-model="proponente.cpf" aria-label="">
+                <input ng-change="" type="text" id="cpf" name="cpf" ng-required="true" class="form-control" placeholder="CPF"
+                    pattern="" ng-model="proponente.cpf" aria-label="" minlength="14" maxlength="14"> 
                 <div class ng-show="dadosProponente.cpf.$invalid && dadosProponente.cpf.$dirty">
                     Preencha com o seu CPF</div>
             </div>
@@ -56,7 +56,7 @@
             <!-- cep -->
             <div class="col-4 col-sm-6 col-6 col-lg-4">
                 <label for="cep" class="form-label">CEP</label>
-                <input type="text" id="cep" ng-required="true" name="cep" pattern="[0-9]{5}-[0-9]{3}"
+                <input type="text" id="cep" ng-required="true" name="cep" pattern="" minlength="9" maxlength="9"
                     class="form-control" placeholder="CEP" ng-model="proponente.cep" name="cep" aria-label="">
                 <div class ng-show="dadosProponente.cep.$invalid && dadosProponente.cep.$dirty">O CEP deve ter 9
                     dígitos"
@@ -67,7 +67,7 @@
             <div class="col-4 col-sm-6 col-6 col-lg-4 ">
                 <label for="celular" class="form-label">Celular</label>
                 <input type="text" id="celular" name="celular" ng-required="true" class="form-control"
-                    placeholder="Celular" pattern="[0-9]{2}[0-9]{5}[0-9]{4}" ng-model="proponente.celular"
+                    placeholder="Celular" pattern="" ng-model="proponente.celular" minlength="13" maxlength="13"
                     aria-label="">
                 <div class ng-show="dadosProponente.celular.$invalid && dadosProponente.celular.$dirty">Preencha com seu
                     celular</div>
