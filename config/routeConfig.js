@@ -23,14 +23,17 @@ angular.module("simuladorDeFinanciamentos")
                 templateUrl: "../component/reprovado/resultadoReprovado.html",
                 controller: 'resultadoReprovadoController'
             })
-            .when("/historico",{
-                templateUrl:"../component/historico/historico.html",
-                controller:'historicoPropostaController'
-            })
-            .when("/botaoHistorico",{
-                templateUrl:"../component/historico/botaoHistorico.html",
-                controller:'botaoPropostaController'
-            })         
+            // .when("/historico",{
+            //     templateUrl:"../component/historico/historicoProposta.html",
+            //     controller:'historicoPropostaController'
+            // }) 
+            .when("/historicoPreenchido",{
+                templateUrl:"../component/historico/historicoPreenchido.html",
+                controller:'historicoPreenchidoController'
+            }) 
+            
+            
+
             .otherwise({ redirectTo: '/home' })
     }
     ]);

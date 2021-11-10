@@ -1,0 +1,23 @@
+<!-- LISTA DE PROPOSTA COM DADOS -->
+<p class="tela-informativa">Histórico de propostas</p>
+<div class="table-responsive-sm">
+    <table class="table table-bordered table-striped table-lista">
+        <thead class="cabecalho-formList">
+            <tr>
+                <th scope="col">Nome do Proponente</th>
+                <th scope="col">Data da simulação</th>
+                <th scope="col">Valor total do imóvel</th>
+                <th scope="col">Número de parcelas</th>        
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="propostas in propostas">
+                <td>{{propostas.proponente.nomeCompleto}}</td>
+                <td>{{propostas.proponente.nomeCompleto}}</td>
+                <td>{{propostas.imovel.valorImovel}}</td>
+                <td>{{propostas.imovel.parcelas}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
