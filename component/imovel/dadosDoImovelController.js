@@ -57,6 +57,11 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
             dadosDaProposta.statusDaSimulacao = statusDaSimulacao;
             dadosDaProposta.imovel = $scope.imovel;
 
+            // console.log("dadosDaProposta!", dadosDaProposta);
+            // var data = new Date();
+            // dadosDaProposta.data = data;
+            // console.log("dadosDaProposta!", dadosDaProposta);
+
             //envia dados para o json.server:
             $scope.enviaProposta(dadosDaProposta);
 

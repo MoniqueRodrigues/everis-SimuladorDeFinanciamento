@@ -4,12 +4,30 @@ simuladorDeFinanciamentos.controller("historicoPreenchidoController", function (
     $http.get("http://localhost:3000/propostas")
         .then(function (response) {
             $scope.propostas = response.data;
-            console.log("$cope.propostas:", $scope.propostas)
+            // console.log("$cope.propostas:", $scope.propostas)
         }
         );
 
 
- 
+    // //ABRE TELA MODAL HISTÓRICO:
+    
+    // // IR PARA A TELA DE HISTÓRICO:
+    // $scope.modalPreenchido = function () {
+    //     console.log("entrou na função do modal")
+    //     $location.path("/historico-modal")
+    // };
+
+
+    // $scope.modalPreenchido= function(){
+    //     $('#exampleModal').modal('show');
+    //     console.log("chamou")
+    // }
+
+
+
+
+
+
 
 });
 
