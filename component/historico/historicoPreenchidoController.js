@@ -10,6 +10,10 @@ simuladorDeFinanciamentos.controller("historicoPreenchidoController", function (
 
 
     // //ABRE TELA MODAL HISTÓRICO:
+    $scope.mostraDados = function (dados, index) {
+        $scope.propostaSelecionada = dados;
+        console.log( "$scope.propostaSelecionada",  $scope.propostaSelecionada)
+      }
     
     // // IR PARA A TELA DE HISTÓRICO:
     // $scope.modalPreenchido = function () {

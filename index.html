@@ -58,6 +58,7 @@
     <script src="component/inicial/homeController.js"></script>
     <script src="component/historico/historicoPreenchidoController.js"></script>
     <script src="component/historico/historicoBotaoController.js"></script>
+    <script src="component/historico/historico-modalController.js"></script>
     <script src="component/proponente/dadosDoProponenteController.js"></script>
     <script src="component/aprovado/resultadoAprovadoController.js"></script>
     <script src="component/reprovado/resultadoReprovadoController.js"></script>
@@ -75,7 +76,9 @@
         </figure>
         <div class="container-titulo">
             <h4 class="titulo-Menu">Simulador de financiamentos</h4>
-        </div>     
+        </div>   
+        <div ng-include="'../component/historico/historicoBotao.html'"></div>
+         
     </nav>
     <div ng-include="'../component/historico/historico-modal.html'"></div>
     
