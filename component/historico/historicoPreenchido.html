@@ -16,12 +16,12 @@
             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
                 Abrir modal de demonstração
             </button> -->
-            <tr ng-repeat="propostas in propostas">
-                <td>{{propostas.proponente.nomeCompleto}}</td>
-                <td>{{propostas.proponente.nomeCompleto}}</td>
-                <td>{{propostas.imovel.valorImovel}}</td>
-                <td>{{propostas.imovel.parcelas}}</td>
-                <td><svg ng-click="mostraDados(propostas,$index)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            <tr ng-repeat="proposta in propostas">
+                <td>{{proposta.proponente.nomeCompleto}}</td>
+                <td>{{proposta.proponente.nomeCompleto}}</td>
+                <td>{{proposta.imovel.valorImovel}}</td>
+                <td>{{proposta.imovel.parcelas}}</td>
+                <td ng-click="propostaSelecionada(proposta)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-eye-fill " data-bs-toggle="modal" data-bs-target="#exampleModal" viewBox="0 0 16 16">
                         <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
                         <path

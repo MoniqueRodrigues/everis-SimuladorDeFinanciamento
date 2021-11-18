@@ -37,7 +37,6 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
     //CALCULA SIMULAÇÃO FINANCIAMENTO:
     $scope.calculaSimulacao = function () {
 
-
         var valorTotalAprovado = $scope.imovel.valorImovel - $scope.imovel.valorEntrada;
         var quantdAnos = $scope.imovel.parcelas / 12;
         var taxaAno = 0.1;

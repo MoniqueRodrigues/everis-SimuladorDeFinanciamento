@@ -36,26 +36,6 @@ simuladorDeFinanciamentos.controller("dadosDoProponenteController", function ($l
     });
 
 
-    // //MÁSCARA VALOR ENTRADA:   
-    // $(document).ready(function () { 
-    //     var $seuCampoEntrada = $("#valorEntrada");
-    //     $seuCampoEntrada.mask('00000,00', {reverse: true});
-    // });
-
-
-    // $( "#valorEntrada" ).blur(function() {
-    //     this.value = parseFloat(this.value).toFixed(2);
-    // });
-    
-
-    // $(document).ready(function () {
-    //     var $seuCampoEntrada = $("#valorEntrada");
-    //     $seuCampoEntrada.mask('00.000', { reverse: true });
-    // });
-
-
-
-
 
 
 
