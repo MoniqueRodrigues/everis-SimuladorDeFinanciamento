@@ -2,20 +2,124 @@
 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Launch demo modal
   </button> -->
-  
-  <!-- Modal -->
-  <div class="modal fade" ng-controller="historicoModalController" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Dados do Proponente</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p >{{buscaDadosLista.proposta.proponente.nomeCompleto}}</p>
-          <p>Não carrega dados</p>
-        </div>
-        
+
+<!-- Modal -->
+<div class="modal fade" ng-controller="historicoModalController" id="exampleModal"tabindex="-1"aria-labelledby="exampleModalLabel" aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body">
+        <!-- <p >{{buscaDadosLista.proposta.proponente.nomeCompleto}}</p> -->
+
+        <!-- dados do proponente -->
+        <table class="table">
+          <thead>
+            <p>Dados do proponente</p>
+
+            <tr>
+              <th scope="col">Nome do proponente</th>
+              <th scope="col">Profissão</th>
+              <th scope="col">CPF</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- <th scope="row">1</th> -->
+              <td>{{buscaDadosLista.proposta.proponente.nomeCompleto}}</td>
+              <td>{{buscaDadosLista.proposta.proponente.profissao}}</td>
+              <td>{{buscaDadosLista.proposta.proponente.cpf}}</td>
+            </tr>
+
+            <tr>
+              <th scope="col">Email do proponente</th>
+              <th scope="col">Data de nascimento</th>
+              <th scope="col">CEP</th>
+            </tr>
+            <tr>
+              <!-- <th scope="row">3</th> -->
+              <!-- <td colspan="2">Larry the Bird</td> -->
+              <td>{{buscaDadosLista.proposta.proponente.email}}</td>
+              <td>{{buscaDadosLista.proposta.proponente.aniversario}}</td>
+              <td>{{buscaDadosLista.proposta.proponente.cep}}</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br />
+        <br />
+
+
+        <!-- dados do imóvel -->
+        <table class="table">
+          <thead>
+            <p>Dados do imóvel</p>
+            <tr>
+              <th scope="col">Tipo do imóvel</th>
+              <th scope="col">Renda mensal</th>
+              <th scope="col">Valor do Imóvel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- <th scope="row">1</th> -->
+              <td>{{buscaDadosLista.proposta.imovel.tipo}}</td>
+              <td>{{buscaDadosLista.proposta.imovel.rendaImovel}}</td>
+              <td>{{buscaDadosLista.proposta.imovel.valorImovel}}</td>
+            </tr>
+
+            <tr>
+              <th scope="col">Valor da Entrada</th>
+              <th scope="col">Número de parcelas</th>
+              <th scope="col"></th>
+            </tr>
+            <tr>
+              <!-- <th scope="row">3</th> -->
+              <!-- <td colspan="2">Larry the Bird</td> -->
+              <td>{{buscaDadosLista.proposta.imovel.valorEntrada}}</td>
+              <td>{{buscaDadosLista.proposta.imovel.parcelas}}</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <br>
+
+        <!-- dados do financiamento -->
+        <table class="table">
+          <thead>
+            <p>Dados do financiamento</p>
+            <tr>
+              <th scope="col">Taxa ao ano</th>
+              <th scope="col">Valor total financiado</th>
+              <th scope="col">Valor total com juros</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- <th scope="row">1</th> -->
+              <td>teste</td>
+              <td>teste</td>
+              <td>teste</td>
+            </tr>
+
+            <tr>
+              <th scope="col">Valor da primeira parcela</th>
+              <th scope="col">Status</th>
+              <th scope="col"></th>
+            </tr>
+            <tr>
+              <!-- <th scope="row">3</th> -->          
+              <td>teste</td>
+              <td>teste</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
+</div>

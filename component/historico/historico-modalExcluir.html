@@ -1,33 +1,18 @@
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-  </button> -->
 
-<!-- Modal Excluir -->
-<div ng-controller="historicoModalExcluirController">
-  <div
-    class="modal fade"
-    id="exampleModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">
-            Dados do Proponente
-          </h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <p>{{TESTE}}</p>
-        </div>
+<!-- Modal excluir -->
+<div ng-controller="historicoPreenchidoController" class="modal fade" id="excluirModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Você realmente deseja deletar essa proposta?</h5>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body">
+        Propostas deletadas, não poderão ser mais visualizadas, esse procedimento não é reverssível.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
+        <button ng-click="excluiDados(proposta)" type="button" class="btn btn-primary"  class="btn-close"  data-bs-dismiss="modal" aria-label="Close"  >EXCLUIR</button>
       </div>
     </div>
   </div>

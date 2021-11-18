@@ -1,5 +1,6 @@
-simuladorDeFinanciamentos.controller("historicoModalExcluirController", function ($location,$scope) {
+simuladorDeFinanciamentos.controller("historicoModalExcluirController", function ($scope,buscaDadosListaService) {
+    // $scope.buscaDadosLista = buscaDadosListaService;
 
-
-
-});
+    
+  }
+);
