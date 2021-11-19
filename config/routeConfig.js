@@ -31,10 +31,10 @@ angular.module("simuladorDeFinanciamentos")
                 templateUrl:"../component/historico/historicoPreenchido.html",
                 controller:'historicoPreenchidoController'
             }) 
-            // .when("/historico-modal",{
-            //     templateUrl:"../component/historico/historico-modal.html",
-            //     controller:'historicoModalController'
-            // }) 
+            .when("/historicoVazio",{
+                templateUrl:"../component/historico/historicoVazio.html",
+                // controller:'historicoModalController'
+            }) 
             
 
             

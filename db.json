@@ -2,13 +2,13 @@
   "propostas": [
     {
       "proponente": {
-        "nomeCompleto": "testec",
-        "profissao": "testec",
-        "cpf": "319.568.785-20",
-        "email": "testec@gmail.com",
+        "nomeCompleto": "testeb",
+        "profissao": "testeb",
+        "cpf": "225.801.248-10",
+        "email": "testeb@gmail.com",
         "aniversario": "1982-04-01T03:00:00.000Z",
         "cep": "08270-090",
-        "celular": "55 69332-0010"
+        "celular": "11 96653-8899"
       },
       "statusDaSimulacao": "aprovada",
       "imovel": {

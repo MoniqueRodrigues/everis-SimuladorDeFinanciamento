@@ -4,8 +4,19 @@ simuladorDeFinanciamentos.controller("botaoPropostaController", function ($scope
     // IR PARA A TELA DE HISTÓRICO:
     $scope.telaHistorico = function () {
         console.log("entrou na função")
-        $location.path("/historicoPreenchido")
+        // $location.path("/historicoPreenchido")
+        $location.path("/historicoVazio")
     };
+
+
+    // $scope.telaHistorico = function(){
+    //     if(){
+
+    //     }
+
+    // }
+
+
 
 
 
