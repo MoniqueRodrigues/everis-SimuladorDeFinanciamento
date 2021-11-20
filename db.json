@@ -1,26 +1,5 @@
 {
-  "propostas": [
-    {
-      "proponente": {
-        "nomeCompleto": "testeb",
-        "profissao": "testeb",
-        "cpf": "225.801.248-10",
-        "email": "testeb@gmail.com",
-        "aniversario": "1982-04-01T03:00:00.000Z",
-        "cep": "08270-090",
-        "celular": "11 96653-8899"
-      },
-      "statusDaSimulacao": "aprovada",
-      "imovel": {
-        "tipo": "casa",
-        "rendaImovel": "10000",
-        "valorImovel": "100000",
-        "valorEntrada": 20000,
-        "parcelas": 36
-      },
-      "id": 1
-    }
-  ],
+  "propostas": [],
   "tipoDeImovel": [
     "casa",
     "apartamento"

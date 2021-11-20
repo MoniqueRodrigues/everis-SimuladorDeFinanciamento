@@ -45,8 +45,12 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
         console.log("quantdParcelas", quantdParcelas);
         var taxaRendaMensal = 0.3;
         var rendaMensal = $scope.imovel.rendaImovel;
+        // var calculoSimulacao = (valorTotalAprovado) + (quantdAnos * taxaAno) * (valorTotalAprovado) / (quantdParcelas);
+        // var parcelaInicial = (calculoSimulacao / quantdParcelas).toFixed(2);
+
         var calculoSimulacao = (valorTotalAprovado) + (quantdAnos * taxaAno) * (valorTotalAprovado) / (quantdParcelas);
         var parcelaInicial = (calculoSimulacao / quantdParcelas).toFixed(2);
+
 
 
         if (parcelaInicial <= rendaMensal * taxaRendaMensal) {
