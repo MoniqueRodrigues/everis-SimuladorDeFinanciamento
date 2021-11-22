@@ -46,8 +46,10 @@
             <!-- data de nascimento -->
             <div class="col-4 col-sm-6 col-6 col-lg-4">
                 <label for="aniversario" class="form-label">Data de nascimento</label>
-                <input type="date" id="aniversario" ng-required="true" name="aniversario" class="form-control"
-                    placeholder="Data de nascimento" ng-model="proponente.aniversario">
+                <!-- <input type="date" id="aniversario" ng-required="true" name="aniversario" class="form-control"
+                    placeholder="Data de nascimento" ng-model="proponente.aniversario"> -->
+                    <input type="text" id="aniversario" ng-required="true" name="aniversario" class="form-control"
+                    placeholder="Data de nascimento" ng-model="proponente.aniversario" ui-date-mask="DD/MM/YYYY">
                 <div class ng-show="dadosProponente.aniversario.$invalid && dadosProponente.aniversario.$dirty">Preencha
                     com
                     sua data de nascimento

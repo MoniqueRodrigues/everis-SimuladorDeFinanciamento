@@ -20,7 +20,7 @@
             </button> -->
             <tr ng-repeat="proposta in propostas">
                 <td>{{proposta.proponente.nomeCompleto}}</td>
-                <td>{{proposta.proponente.nomeCompleto}}</td>
+                <td>{{proposta.data}}</td>
                 <td>R$ {{proposta.imovel.valorImovel}}</td>
                 <td>{{proposta.imovel.parcelas}} parcelas</td>
                 <td ng-click="propostaSelecionada(proposta)">

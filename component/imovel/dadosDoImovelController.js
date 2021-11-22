@@ -45,25 +45,26 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
         console.log("quantdParcelas", quantdParcelas);
         var taxaRendaMensal = 0.3;
         var rendaMensal = $scope.imovel.rendaImovel;
-        // var calculoSimulacao = (valorTotalAprovado) + (quantdAnos * taxaAno) * (valorTotalAprovado) / (quantdParcelas);
-        // var parcelaInicial = (calculoSimulacao / quantdParcelas).toFixed(2);
-
         var calculoSimulacao = (valorTotalAprovado) + (quantdAnos * taxaAno) * (valorTotalAprovado) / (quantdParcelas);
-        var parcelaInicial = (calculoSimulacao / quantdParcelas).toFixed(2);
-
+        var parcelaInicial = (calculoSimulacao / quantdParcelas).toFixed(2); 
 
 
         if (parcelaInicial <= rendaMensal * taxaRendaMensal) {
+
+            var data = new Date();
+            console.log("data", data)
+            
+            console.log("dadosDaProposta!", dadosDaProposta);
 
             var statusDaSimulacao = "aprovada";
 
             dadosDaProposta.statusDaSimulacao = statusDaSimulacao;
             dadosDaProposta.imovel = $scope.imovel;
+            dadosDaProposta.data = data
+            console.log("dadosDaProposta.data:",dadosDaProposta.data )
 
-            // console.log("dadosDaProposta!", dadosDaProposta);
-            // var data = new Date();
-            // dadosDaProposta.data = data;
-            // console.log("dadosDaProposta!", dadosDaProposta);
+           
+        
 
             //envia dados para o json.server:
             $scope.enviaProposta(dadosDaProposta);
