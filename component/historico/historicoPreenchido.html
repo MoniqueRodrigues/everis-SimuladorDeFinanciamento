@@ -1,14 +1,16 @@
 <!-- LISTA DE PROPOSTA COM DADOS -->
 
 <p class="tela-informativa">Histórico de propostas</p>
-<div class="table-responsive-sm">
-    <table class="table table-bordered table-striped table-lista">
+<div class="table-responsive-sm  container-principal ">
+    <table class="table ">
         <thead class="cabecalho-formList">
             <tr>
                 <th scope="col">Nome do Proponente</th>
                 <th scope="col">Data da simulação</th>
                 <th scope="col">Valor total do imóvel</th>
                 <th scope="col">Número de parcelas</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -19,8 +21,8 @@
             <tr ng-repeat="proposta in propostas">
                 <td>{{proposta.proponente.nomeCompleto}}</td>
                 <td>{{proposta.proponente.nomeCompleto}}</td>
-                <td>{{proposta.imovel.valorImovel}}</td>
-                <td>{{proposta.imovel.parcelas}}</td>
+                <td>R$ {{proposta.imovel.valorImovel}}</td>
+                <td>{{proposta.imovel.parcelas}} parcelas</td>
                 <td ng-click="propostaSelecionada(proposta)">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-eye-fill " data-bs-toggle="modal" data-bs-target="#exampleModal" viewBox="0 0 16 16">

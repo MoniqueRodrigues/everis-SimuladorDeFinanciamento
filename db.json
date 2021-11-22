@@ -1,5 +1,46 @@
 {
-  "propostas": [],
+  "propostas": [
+    {
+      "proponente": {
+        "nomeCompleto": "testeA",
+        "profissao": "testeA",
+        "cpf": "225.801.248-10",
+        "email": "testeA@gmail.com",
+        "aniversario": "1982-04-01T03:00:00.000Z",
+        "cep": "08270-090",
+        "celular": "11 96653-7899"
+      },
+      "statusDaSimulacao": "aprovada",
+      "imovel": {
+        "tipo": "casa",
+        "rendaImovel": "20000",
+        "valorImovel": "200000",
+        "valorEntrada": 40000,
+        "parcelas": 36
+      },
+      "id": 1
+    },
+    {
+      "proponente": {
+        "nomeCompleto": "testeB",
+        "profissao": "testeB",
+        "cpf": "225.801.248-10",
+        "email": "testeB@gmail.com",
+        "aniversario": "1982-04-01T03:00:00.000Z",
+        "cep": "08270-090",
+        "celular": "11 96658-9963"
+      },
+      "statusDaSimulacao": "aprovada",
+      "imovel": {
+        "tipo": "apartamento",
+        "rendaImovel": "30000",
+        "valorImovel": "100000",
+        "valorEntrada": 20000,
+        "parcelas": 36
+      },
+      "id": 2
+    }
+  ],
   "tipoDeImovel": [
     "casa",
     "apartamento"
