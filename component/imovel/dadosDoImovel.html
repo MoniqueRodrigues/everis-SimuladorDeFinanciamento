@@ -27,7 +27,7 @@
         <!-- valor do imóvel -->
         <div class="col-4 col-sm-6 col-6 col-lg-4">
             <label for="valorImovel" class="form-label"></label>
-            <input ng-change="validaEntrada()" type="text" id="valorImovel" name="valorImovel" ng-required="true"
+            <input ng-change="validaEntrada()" type="text" id="valorImovel" name="valorImovel" ng-required="true" 
                 class="form-control" placeholder="Valor do imóvel" pattern="^[0-9]+$" ng-model="imovel.valorImovel"
                 aria-label="">
             <!-- <input ng-change="validaEntrada()" type="text" id="valorImovel" name="valorImovel" ng-required="true"
@@ -41,8 +41,9 @@
         <div class="col-4 col-sm-6 col-6 col-lg-4">
             <label for="valorEntrada" class="form-label"></label>
             <input ng-change="validaEntrada()" type="number" id="valorEntrada" name="valorEntrada"
-                min="{{resulCalculo}}" ng-required="true" class="form-control" placeholder="Valor da entrada"
-                ng-model="imovel.valorEntrada" aria-label="">
+                min="{{resulCalculo}}" ng-required="true" class="form-control" placeholder="Valor da entrada" 
+                ng-model="imovel.valorEntrada" aria-label="" >
+              
             <div class ng-show="dadosImovel.valorEntrada.$invalid && dadosImovel.valorEntrada.$dirty">Preencha com no
                 mínimo 20% do valor do imóvel.</div>
         </div>

@@ -2,27 +2,6 @@
   "propostas": [
     {
       "proponente": {
-        "nomeCompleto": "testeA",
-        "profissao": "testeA",
-        "cpf": "312.325.896-20",
-        "email": "testeA@gmail.com",
-        "aniversario": "1982-01-24T03:00:00.000Z",
-        "cep": "08270-090",
-        "celular": "11 29853-2222"
-      },
-      "statusDaSimulacao": "aprovada",
-      "imovel": {
-        "tipo": "apartamento",
-        "rendaImovel": "200000",
-        "valorImovel": "100000",
-        "valorEntrada": 20000,
-        "parcelas": 36
-      },
-      "data": "2020-12-20T03:23:16.738Z",
-      "id": 1
-    },
-    {
-      "proponente": {
         "aniversario": "1982-04-01T03:00:00.000Z",
         "nomeCompleto": "testec",
         "profissao": "testec",
@@ -41,6 +20,27 @@
       },
       "data": "2020-01-29T03:00:00.000Z",
       "id": 2
+    },
+    {
+      "proponente": {
+        "nomeCompleto": "testeD",
+        "profissao": "testeD",
+        "cpf": "225.801.248-10",
+        "email": "testeD@gmail.com",
+        "aniversario": "1982-04-01T03:00:00.000Z",
+        "cep": "08270-090",
+        "celular": "(11)96653-7734"
+      },
+      "statusDaSimulacao": "aprovada",
+      "imovel": {
+        "tipo": "casa",
+        "rendaImovel": "60000",
+        "valorImovel": "100000",
+        "valorEntrada": 20000,
+        "parcelas": 36
+      },
+      "data": "2021-11-23T14:20:54.521Z",
+      "id": 3
     }
   ],
   "tipoDeImovel": [

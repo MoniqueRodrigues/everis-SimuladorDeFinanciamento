@@ -5,7 +5,7 @@ simuladorDeFinanciamentos.controller("dadosDoProponenteController", function ($l
 
     //RECEBENDO OS DADOS DO PROPONENTE:     
     var dadosDaProposta = $location.search().dadosDaProposta;
-    console.log("recebendo os dados do proponente", dadosDaProposta);
+    // console.log("recebendo os dados do proponente", dadosDaProposta);
 
     // Preencher os campos da tela com os dados da variável dadosDaProposta
     if (dadosDaProposta) {
@@ -32,11 +32,49 @@ simuladorDeFinanciamentos.controller("dadosDoProponenteController", function ($l
     //MÁSCARA DE CELULAR:   
     $(document).ready(function () {
         var $seuCampoCelular = $("#celular");
-        $seuCampoCelular.mask('00 00000-0000', { reverse: true });
+        $seuCampoCelular.mask("(00)00000-0000", { reverse: true });
     });
 
+    jQuery(function($){
+        // $("#campoData").mask("99/99/9999");
+        $("#celular").mask("(99)99999-9999");
+        // $("#campoSenha").mask("***-****");
+        });
 
 
+
+
+    // valida data de nascimento 
+   
+
+    $scope.teste =function() {
+        inputAniversario= document.querySelector('#aniversario').value;
+        // console.log("dados do input:", inputAniversario );
+       
+        inputAniversario= new Date( inputAniversario)//transformando em obj date;
+        // console.log("mostra objeto data:",  inputAniversario);
+        var aniversarioTempo = inputAniversario.getTime();
+        // console.log("data aniversário em milisegundos", aniversarioTempo);
+
+
+        dataAtual = new Date();
+        // console.log("mostra data hoje:", dataAtual);
+        var dataTempo = dataAtual.getTime();
+        // console.log("data atual em milisegundos", dataTempo); //1637766836151
+
+       
+        var diferencaDatas = Math.abs (aniversarioTempo - dataTempo );
+        console.log("mostra subtração de datas:", diferencaDatas); //1251300713006
+
+        var anoMilisegundos = 31536000000;
+        var anosTotal= (diferencaDatas/anoMilisegundos).toFixed(0);      
+        console.log("sua idade é:", anosTotal + " anos")
+
+       
+
+
+
+    }
 
 
 
@@ -65,19 +103,7 @@ simuladorDeFinanciamentos.controller("dadosDoProponenteController", function ($l
             //ir para tela Inicial:
             $scope.telaInicial = function () {
                 $location.path("/home")
-            };
-
-
-
-            // var formControl =document.querySelector(".form-control");
-            // console.log("form-control:", formControl);
-            // $scope.mudaCor =function(){
-            //     if(){
-
-            //     }
-
-            // }
-
+            };            
 
         });
 

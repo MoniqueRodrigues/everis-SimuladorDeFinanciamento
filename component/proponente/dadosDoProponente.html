@@ -48,8 +48,8 @@
                 <label for="aniversario" class="form-label">Data de nascimento</label>
                 <!-- <input type="date" id="aniversario" ng-required="true" name="aniversario" class="form-control"
                     placeholder="Data de nascimento" ng-model="proponente.aniversario"> -->
-                    <input type="text" id="aniversario" ng-required="true" name="aniversario" class="form-control"
-                    placeholder="Data de nascimento" ng-model="proponente.aniversario" ui-date-mask="DD/MM/YYYY">
+                    <input ng-change="teste()" type="date" id="aniversario" ng-required="true" name="aniversario" class="form-control"
+                    placeholder="Data de nascimento" ng-model="proponente.aniversario"> 
                 <div class ng-show="dadosProponente.aniversario.$invalid && dadosProponente.aniversario.$dirty">Preencha
                     com
                     sua data de nascimento
@@ -69,7 +69,7 @@
             <div class="col-4 col-sm-6 col-6 col-lg-4 ">
                 <label for="celular" class="form-label">Celular</label>
                 <input type="text" id="celular" name="celular" ng-required="true" class="form-control"
-                    placeholder="Celular" pattern="" ng-model="proponente.celular" minlength="13" maxlength="13"
+                    placeholder="Celular" pattern="" ng-model="proponente.celular" minlength="14" maxlength="14"
                     aria-label="">
                 <div class ng-show="dadosProponente.celular.$invalid && dadosProponente.celular.$dirty">Preencha com seu
                     celular</div>
