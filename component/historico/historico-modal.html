@@ -67,8 +67,8 @@
             <tr>
               <!-- <th scope="row">1</th> -->
               <td>{{buscaDadosLista.proposta.imovel.tipo}}</td>
-              <td>{{buscaDadosLista.proposta.imovel.rendaImovel}}</td>
-              <td>{{buscaDadosLista.proposta.imovel.valorImovel}}</td>
+              <td>{{buscaDadosLista.proposta.imovel.rendaImovel |currency : 'R$'}}</td>
+              <td>{{buscaDadosLista.proposta.imovel.valorImovel |currency : 'R$'}} </td>
             </tr>
 
             <tr>
@@ -79,7 +79,7 @@
             <tr>
               <!-- <th scope="row">3</th> -->
               <!-- <td colspan="2">Larry the Bird</td> -->
-              <td>{{buscaDadosLista.proposta.imovel.valorEntrada}}</td>
+              <td>{{buscaDadosLista.proposta.imovel.valorEntrada|currency : 'R$'}}</td>
               <td>{{buscaDadosLista.proposta.imovel.parcelas}}</td>
               <td></td>
             </tr>
@@ -102,8 +102,8 @@
             <tr>
               <!-- <th scope="row">1</th> -->
               <td>10%</td>
-              <td>{{buscaDadosLista.proposta.imovel.valorImovel-buscaDadosLista.proposta.imovel.valorEntrada}}</td>
-              <td>teste</td>
+              <td>{{buscaDadosLista.proposta.imovel.valorImovel-buscaDadosLista.proposta.imovel.valorEntrada |currency : 'R$'}}</td>
+              <td>{{((buscaDadosLista.proposta.imovel.valorImovel - buscaDadosLista.proposta.imovel.valorEntrada)+ (buscaDadosLista.proposta.imovel.parcelas / 12 * 0.1) * (buscaDadosLista.proposta.imovel.valorImovel - buscaDadosLista.proposta.imovel.valorEntrada) / (buscaDadosLista.proposta.imovel.parcelas)|currency : 'R$')}}</td>
             </tr>
 
             <tr>
@@ -113,7 +113,7 @@
             </tr>
             <tr>
               <!-- <th scope="row">3</th> -->
-              <td>teste</td>
+              <td>{{((buscaDadosLista.proposta.imovel.valorImovel - buscaDadosLista.proposta.imovel.valorEntrada)+ (buscaDadosLista.proposta.imovel.parcelas / 12 * 0.1) * (buscaDadosLista.proposta.imovel.valorImovel - buscaDadosLista.proposta.imovel.valorEntrada) / (buscaDadosLista.proposta.imovel.parcelas))/buscaDadosLista.proposta.imovel.parcelas|currency : 'R$'}}</td>
               <td>{{buscaDadosLista.proposta.statusDaSimulacao}}</td>
               <td></td>
             </tr>

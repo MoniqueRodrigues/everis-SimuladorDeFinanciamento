@@ -4,7 +4,7 @@ simuladorDeFinanciamentos.controller("dadosDoImovelController", function ($locat
 
     // RECEBENDO OS DADOS DO PROPONENTE:
     var dadosDaProposta = $location.search().dadosDaProposta;
-    console.log("dadosDaProposta", dadosDaProposta)
+    // console.log("dadosDaProposta", dadosDaProposta)
 
     //carregar informações imóvel vindas da tela proponente:
     if (dadosDaProposta.imovel) {

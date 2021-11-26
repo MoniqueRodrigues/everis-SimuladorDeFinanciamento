@@ -42,19 +42,17 @@
                 <div class ng-show="dadosProponente.email.$invalid && dadosProponente.email.$dirty">Preencha um e-mail
                     válido</div>
             </div>
-
+         
             <!-- data de nascimento -->
             <div class="col-4 col-sm-6 col-6 col-lg-4">
                 <label for="aniversario" class="form-label">Data de nascimento</label>
-                <!-- <input type="date" id="aniversario" ng-required="true" name="aniversario" class="form-control"
-                    placeholder="Data de nascimento" ng-model="proponente.aniversario"> -->
                     <input ng-change="teste()" type="date" id="aniversario" ng-required="true" name="aniversario" class="form-control"
-                    placeholder="Data de nascimento" ng-model="proponente.aniversario"> 
+                    placeholder="Data de nascimento" ng-model="proponente.aniversario">                 
                 <div class ng-show="dadosProponente.aniversario.$invalid && dadosProponente.aniversario.$dirty">Preencha
-                    com
-                    sua data de nascimento
+                    com sua data de nascimento
                 </div>
             </div>
+            
             <!-- cep -->
             <div class="col-4 col-sm-6 col-6 col-lg-4">
                 <label for="cep" class="form-label">CEP</label>
@@ -82,7 +80,6 @@
                 class="btn btn-primary btn-sm btnProp-imovel ">CANCELAR</button>
             <button ng-click="telaimovel()" type="button" class="btn btn-primary btn-sm btnProp-imovel"
                 ng-disabled="dadosProponente.$invalid">CONTINUAR</button>
-
         </div>
 
     </div>
