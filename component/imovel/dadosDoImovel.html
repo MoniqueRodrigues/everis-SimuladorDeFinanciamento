@@ -19,7 +19,7 @@
         <div class="col-4 col-sm-6 col-6 col-lg-4">
             <label for="rendaImovel" class="form-label"></label>
             <input type="text" id="rendaImovel" name="rendaImovel" ng-required="true" class="form-control"
-                placeholder="Renda mensal" pattern="^[0-9]+$" ng-model="imovel.rendaImovel" aria-label="">
+                placeholder="Renda mensal" ng-model="imovel.rendaImovel" aria-label="">
             <div class ng-show="dadosImovel.rendaImovel.$invalid && dadosImovel.rendaImovel.$dirty">Preencha com a sua
                 renda mensal</div>
         </div>
@@ -30,10 +30,7 @@
             <input ng-change="validaEntrada()" type="text" id="valorImovel" name="valorImovel" ng-required="true" 
                 class="form-control" placeholder="Valor do imóvel" pattern="^[0-9]+$" ng-model="imovel.valorImovel"
                 aria-label="">
-            <!-- <input ng-change="validaEntrada()" type="text" id="valorImovel" name="valorImovel" ng-required="true"
-                class="form-control" placeholder="Valor do imóvel" mask-currency="'R$'"
-                config="{group:'.',decimal:',',indentation:' '}" ng-model="imovel.valorImovel" aria-label=""> -->
-            <div class ng-show="dadosImovel.valorImovel.$invalid && dadosImovel.valorImovel.$dirty">Preencha com o valor
+                <div class ng-show="dadosImovel.valorImovel.$invalid && dadosImovel.valorImovel.$dirty">Preencha com o valor
                 do imóvel desejado</div>
         </div>
  

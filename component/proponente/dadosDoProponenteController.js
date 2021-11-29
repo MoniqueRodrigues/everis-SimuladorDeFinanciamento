@@ -35,7 +35,6 @@ simuladorDeFinanciamentos.controller(
       $("#celular").mask("(99)99999-9999");
     });
 
-
     // CALCULA IDADE:
     $scope.teste = function () {
       inputAniversario = document.querySelector("#aniversario").value;
@@ -54,24 +53,18 @@ simuladorDeFinanciamentos.controller(
       var diferencaDatas = Math.abs(aniversarioTempo - dataTempo);
       // console.log("mostra subtração de datas:", diferencaDatas); //1251300713006
 
-     var anoMilisegundos = 31536000000;
-     var anosTotal = (diferencaDatas / anoMilisegundos).toFixed(0);
+      var anoMilisegundos = 31557600000;
+      var anosTotal = (diferencaDatas / anoMilisegundos).toFixed(0);
       console.log("sua idade é:", anosTotal + " anos");
-     var idadePermitida = 18;
- 
+      var idadePermitida = 18;
 
-     
-
-
-
-    //   if (anosTotal >= idadeMinima) {     
-    //     dadosProponente.valid;
-    //   } else {
-    //     dadosProponente.invalid;      
-    //   }
+      if (anosTotal >= idadePermitida) {
+        $scope.validaIdade = false;
+      } else {       
+        $scope.validaIdade = true;
+      }
+      // console.log("validaIdade:", $scope.validaIdade);
     };
-
-
 
     //ir para tela imovel:
     $scope.telaimovel = function () {

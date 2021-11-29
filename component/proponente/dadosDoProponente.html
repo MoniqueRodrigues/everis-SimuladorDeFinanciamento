@@ -78,8 +78,8 @@
         <div class="button-proponente">
             <button ng-click="telaInicial()" type="button"
                 class="btn btn-primary btn-sm btnProp-imovel ">CANCELAR</button>
-            <button ng-click="telaimovel()" type="button" class="btn btn-primary btn-sm btnProp-imovel"
-                ng-disabled="dadosProponente.$invalid">CONTINUAR</button>
+            <button ng-click="telaimovel()" type="button" class="btn btn-primary btn-sm btnProp-imovel btn-continuar"
+                ng-disabled="dadosProponente.$invalid || validaIdade">CONTINUAR</button>
         </div>
 
     </div>
