@@ -12,19 +12,6 @@ simuladorDeFinanciamentos.controller(
     }
     //#endregion Método Inicial
 
-    
-
-    // FORMATA DADOS DE RENDA
-    // $("#rendaImovel").maskMoney();
-
-
-
-
-
-
-
-
-
     //GET PARA PEGAR OS DADOS TIPO DE IMOVEL E LISTAR NA TELA IMÓVEL:
     $http.get("http://localhost:3000/tipoDeImovel").then(function (response) {
       $scope.tipo = response.data;
@@ -35,11 +22,33 @@ simuladorDeFinanciamentos.controller(
       $location.path("/reprovado");
     };
 
+
+
     //CALCULA E VALIDA CAMPO VALOR DE ENTRADA:
+
     $scope.validaEntrada = function () {
+      inputValorImovel = document.querySelector("#valorImovel").value;
+      // console.log("inputValorImovel:",inputValorImovel );
+      inputValorImovel = parseInt(inputValorImovel);
+      console.log("mostra inputValorImovel:", inputValorImovel);
+
+      $scope.inputValorEntrada = document.querySelector("#valorEntrada").value;
+      //    console.log("inputValorEntrada:",   $scope.inputValorEntrada);
+      $scope.inputValorEntrada = parseInt($scope.inputValorEntrada);
+      console.log("mostra inputValorEntrada:", $scope.inputValorEntrada);
+
       var regraNegocio = 0.2;
       $scope.resulCalculo = $scope.imovel.valorImovel * regraNegocio;
     };
+
+
+    // MÁSCARA CURRENCY CAMPOS MONETÁRIOS:
+    // $(function(){
+    //     $('#rendaImovel').maskMoney({prefix:'R$ ', allowNegative: true, thousands:'.', decimal:',', affixesStay: true});
+    // })
+
+
+
 
     //CALCULA SIMULAÇÃO FINANCIAMENTO:
     $scope.calculaSimulacao = function () {
@@ -58,7 +67,7 @@ simuladorDeFinanciamentos.controller(
       var parcelaInicial = (calculoSimulacao / quantdParcelas).toFixed(2);
 
       if (parcelaInicial <= rendaMensal * taxaRendaMensal) {
-        var data = new Date();       
+        var data = new Date();
 
         var statusDaSimulacao = "aprovada";
 

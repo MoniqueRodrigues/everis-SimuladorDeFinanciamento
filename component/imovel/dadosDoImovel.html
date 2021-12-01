@@ -34,16 +34,16 @@
                 do imóvel desejado</div>
         </div>
  
-        <!-- valor da entrada -->
+        <!-- valor da entrada -->       
         <div class="col-4 col-sm-6 col-6 col-lg-4">
             <label for="valorEntrada" class="form-label"></label>
-            <input ng-change="validaEntrada()" type="number" id="valorEntrada" name="valorEntrada"
-                min="{{resulCalculo}}" ng-required="true" class="form-control" placeholder="Valor da entrada" 
-                ng-model="imovel.valorEntrada" aria-label="" >
-              
-            <div class ng-show="dadosImovel.valorEntrada.$invalid && dadosImovel.valorEntrada.$dirty">Preencha com no
+            <input ng-change="validaEntrada()" type="text" id="valorEntrada" name="valorEntrada"
+                 ng-required="true" class="form-control" placeholder="Valor da entrada"  ng-pattern="/^[0-9]{1,7}$/"
+                ng-model="imovel.valorEntrada" aria-label="" >              
+            <div class ng-show="dadosImovel.valorEntrada.$invalid && dadosImovel.valorEntrada.$dirty || inputValorEntrada < resulCalculo" >Preencha com no
                 mínimo 20% do valor do imóvel.</div>
         </div>
+
 
         <!-- quantidade de parcelas -->
         <div class="col-4 col-sm-6 col-6 col-lg-4">
