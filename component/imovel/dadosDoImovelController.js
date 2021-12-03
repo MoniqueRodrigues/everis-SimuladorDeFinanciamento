@@ -26,27 +26,48 @@ simuladorDeFinanciamentos.controller(
 
     //CALCULA E VALIDA CAMPO VALOR DE ENTRADA:
 
-    $scope.validaEntrada = function () {
-      inputValorImovel = document.querySelector("#valorImovel").value;
-      // console.log("inputValorImovel:",inputValorImovel );
-      inputValorImovel = parseInt(inputValorImovel);
-      console.log("mostra inputValorImovel:", inputValorImovel);
+    $scope.validaEntrada = function () {  
+      var inputValorImovel = $scope.imovel.valorImovel;
+      $scope.inputValorEntrada = $scope.imovel.valorEntrada;
 
-      $scope.inputValorEntrada = document.querySelector("#valorEntrada").value;
-      //    console.log("inputValorEntrada:",   $scope.inputValorEntrada);
-      $scope.inputValorEntrada = parseInt($scope.inputValorEntrada);
-      console.log("mostra inputValorEntrada:", $scope.inputValorEntrada);
+         
 
-      var regraNegocio = 0.2;
-      $scope.resulCalculo = $scope.imovel.valorImovel * regraNegocio;
+      while(inputValorImovel && $scope.inputValorEntrada == "." ){
+        inputValorImovel.replace(".", ",")
+
+
+      }
+      console.log("inputValorImovel:", inputValorImovel)
+      console.log("$scope.inputValorEntrada:",$scope.inputValorEntrada)
+
+      
+
+      // var inputValorImovel = parseInt( $scope.imovel.valorImovel);    
+      // console.log("inputValorImovel:", inputValorImovel)
+
+      // $scope.inputValorEntrada = parseInt($scope.imovel.valorEntrada);
+      // console.log("$scope.inputValorEntrada", $scope.inputValorEntrada)
+    
+      // var regraNegocio = 0.2;
+      // $scope.resulCalculo = inputValorImovel * regraNegocio;    
+      // console.log("$scope.resulCalculo:", $scope.resulCalculo)
+
+     
     };
 
 
-    // MÁSCARA CURRENCY CAMPOS MONETÁRIOS:
-    // $(function(){
-    //     $('#rendaImovel').maskMoney({prefix:'R$ ', allowNegative: true, thousands:'.', decimal:',', affixesStay: true});
-    // })
 
+    // MÁSCARA CURRENCY CAMPOS MONETÁRIOS:
+    $(document).ready(function(){
+      $('#valorEntrada').mask('#.###0,00', {reverse:true})
+      console.log("valorEntrada:", valorEntrada)
+      $('#valorImovel').mask('#.###0,00', {reverse:true})
+
+    });
+    // $(function() {
+    //   $('#currency').maskMoney();
+    //   })
+    
 
 
 
