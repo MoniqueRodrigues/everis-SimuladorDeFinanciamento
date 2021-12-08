@@ -5,7 +5,7 @@ simuladorDeFinanciamentos.controller(
     //GET PARA PEGAR OS DADOS DA PROPOSTA E LISTAR NA TELA:
     $http.get("http://localhost:3000/propostas").then(function (response) {
       $scope.propostas = response.data;
-      console.log("$scope.propostas", $scope.propostas);
+      // console.log("$scope.propostas", $scope.propostas);
       // $scope.selectPaginaHistorico();
     });
 

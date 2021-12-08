@@ -25,50 +25,13 @@ simuladorDeFinanciamentos.controller(
 
 
     //CALCULA E VALIDA CAMPO VALOR DE ENTRADA:
-
     $scope.validaEntrada = function () {  
-      var inputValorImovel = $scope.imovel.valorImovel;
-      $scope.inputValorEntrada = $scope.imovel.valorEntrada;
-
-         
-
-      while(inputValorImovel && $scope.inputValorEntrada == "." ){
-        inputValorImovel.replace(".", ",")
-
-
-      }
-      console.log("inputValorImovel:", inputValorImovel)
-      console.log("$scope.inputValorEntrada:",$scope.inputValorEntrada)
-
-      
-
-      // var inputValorImovel = parseInt( $scope.imovel.valorImovel);    
-      // console.log("inputValorImovel:", inputValorImovel)
-
-      // $scope.inputValorEntrada = parseInt($scope.imovel.valorEntrada);
-      // console.log("$scope.inputValorEntrada", $scope.inputValorEntrada)
-    
-      // var regraNegocio = 0.2;
-      // $scope.resulCalculo = inputValorImovel * regraNegocio;    
-      // console.log("$scope.resulCalculo:", $scope.resulCalculo)
-
+      //calculo validação
+      var regraNegocio = 0.2;
+      $scope.resulCalculo = $scope.imovel.valorImovel * regraNegocio;    
+      console.log("$scope.resulCalculo:", $scope.resulCalculo)     
      
     };
-
-
-
-    // MÁSCARA CURRENCY CAMPOS MONETÁRIOS:
-    $(document).ready(function(){
-      $('#valorEntrada').mask('#.###0,00', {reverse:true})
-      console.log("valorEntrada:", valorEntrada)
-      $('#valorImovel').mask('#.###0,00', {reverse:true})
-
-    });
-    // $(function() {
-    //   $('#currency').maskMoney();
-    //   })
-    
-
 
 
     //CALCULA SIMULAÇÃO FINANCIAMENTO:

@@ -4,22 +4,43 @@
       "proponente": {
         "nomeCompleto": "testeA",
         "profissao": "testeA",
-        "cpf": "235.698.785-41",
-        "email": "testeA@gmail.vom",
-        "aniversario": "2021-04-12T03:00:00.000Z",
-        "cep": "09338-230",
-        "celular": "(11)96653-8893"
+        "cpf": "225.801.248-10",
+        "email": "testeA@gmail.com",
+        "aniversario": "1982-04-01T03:00:00.000Z",
+        "cep": "08270-090",
+        "celular": "(11)96653-7898"
+      },
+      "statusDaSimulacao": "aprovada",
+      "imovel": {
+        "tipo": "apartamento",
+        "rendaImovel": "10000.00",
+        "valorImovel": "100000.00",
+        "valorEntrada": "20000.00",
+        "parcelas": 36
+      },
+      "data": "2021-12-08T13:32:40.775Z",
+      "id": 1
+    },
+    {
+      "proponente": {
+        "nomeCompleto": "testeB",
+        "profissao": "testeB",
+        "cpf": "315.789.828-20",
+        "email": "testeB@gmail.com",
+        "aniversario": "1982-01-24T03:00:00.000Z",
+        "cep": "08270-090",
+        "celular": "(11)96653-8982"
       },
       "statusDaSimulacao": "aprovada",
       "imovel": {
         "tipo": "casa",
-        "rendaImovel": "10000",
-        "valorImovel": "100000",
-        "valorEntrada": 20000,
+        "rendaImovel": "20000.00",
+        "valorImovel": "200000.00",
+        "valorEntrada": "40000.00",
         "parcelas": 36
       },
-      "data": "2021-11-26T20:10:45.575Z",
-      "id": 1
+      "data": "2021-12-08T13:34:39.232Z",
+      "id": 2
     }
   ],
   "tipoDeImovel": [

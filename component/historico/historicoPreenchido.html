@@ -21,7 +21,7 @@
             <tr ng-repeat="proposta in propostas">
                 <td>{{proposta.proponente.nomeCompleto}}</td>
                 <td>{{proposta.data  | date:'dd/MM/yyyy h:mm'}}</td>
-                <td>R$ {{proposta.imovel.valorImovel}}</td>
+                <td>{{proposta.imovel.valorImovel |currency : 'R$'}}</td>
                 <td>{{proposta.imovel.parcelas}} parcelas</td>
                 <td ng-click="propostaSelecionada(proposta)">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
