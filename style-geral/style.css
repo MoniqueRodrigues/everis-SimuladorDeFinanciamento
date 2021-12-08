@@ -46,8 +46,13 @@ nav {
 
 /* FORMULÁRIO */
 
+.containerInput{
+    margin-top: 20px;
+}
+
 label {
     font-size: 13px;
+    padding-top: 10px;
 }
 
 .form-control.invalid:active, .form-control:focus {
@@ -58,12 +63,24 @@ label {
 
 .container-form {
     background-color:#ffffff;
-    height: 280px;
+    height:400px;
     border-radius: 4px;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 20px;
 }
+
+.form-control.ng-dirty{
+    border:1px solid red;  
+}
+
+
+
+
+
+.form-control.ng-valid {
+    border:1px solid lightgray;
+  }
 
 /* BOTAO */
 
@@ -86,9 +103,10 @@ label {
     border: #6200EE;
     border: solid 1px #6200EE;
     background-color: transparent;
-    margin-top: 40px;
+    margin-top:60px;
     display: flex;
 }
+
 
 .btnProp-imovel:hover {
     background-color: #6200EE;
@@ -99,6 +117,22 @@ label {
     display: flex;
     justify-content: space-between;
 }
+
+.button-imovel{
+    margin-top:80px;
+}
+
+.btn-continuar{
+   color:grey;
+   border: transparent;
+   background-color: transparent;
+    
+}
+
+
+
+
+
 
 /* RESULTADO */
 
@@ -169,6 +203,8 @@ label {
     background-color: #6200EE;
     border: solid 1px #ffffff;
 }
+
+
 
 
 

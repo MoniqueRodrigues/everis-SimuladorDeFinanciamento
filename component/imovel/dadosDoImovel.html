@@ -7,8 +7,8 @@
     <div class="row">
 
         <!-- tipo de imovel -->
-        <div class= "col-4 col-sm-6 col-6 col-lg-4">
-            <label for="tipoImovel" class="form-label"></label>
+        <div class= "col-4 col-sm-6 col-6 col-lg-4 containerInput">
+            <label for="tipoImovel" class="form-label">Tipo do Imóvel</label>
             <select class="form-control" ng-model="imovel.tipo" name="tipoImovel"
                 ng-options="listaImoveis for listaImoveis in tipo" ng-required="true">
                 <option value="">Tipo do Imóvel</option>
@@ -16,8 +16,8 @@
         </div>
 
         <!-- valor da renda -->
-        <div class="col-4 col-sm-6 col-6 col-lg-4">
-            <label for="rendaImovel" class="form-label"></label>
+        <div class="col-4 col-sm-6 col-6 col-lg-4 containerInput">
+            <label for="rendaImovel" class="form-label">Renda mensal</label>
             <input type="text" id="rendaImovel" name="rendaImovel" ng-required="true" class="form-control"
                 placeholder="Renda mensal" ng-model="imovel.rendaImovel" aria-label=""  mask-currency="'R$'"
                 config="{group:'.',decimal:',',indentation:' '}">
@@ -26,8 +26,8 @@
         </div>
 
         <!-- valor do imóvel -->
-        <div class="col-4 col-sm-6 col-6 col-lg-4">
-            <label for="valorImovel" class="form-label"></label>
+        <div class="col-4 col-sm-6 col-6 col-lg-4 containerInput">
+            <label for="valorImovel" class="form-label">Valor do imóvel</label>
             <input ng-change="validaEntrada()" type="text" id="valorImovel" name="valorImovel" ng-required="true" 
                 class="form-control" placeholder="Valor do imóvel"ng-model="imovel.valorImovel" 
                 aria-label="" mask-currency="'R$'"
@@ -37,8 +37,8 @@
         </div>
  
         <!-- valor da entrada -->       
-        <div class="col-4 col-sm-6 col-6 col-lg-4">
-            <label for="valorEntrada" class="form-label"></label>
+        <div class="col-4 col-sm-6 col-6 col-lg-4 containerInput">
+            <label for="valorEntrada" class="form-label">Valor da entrada</label>
             <input ng-change="validaEntrada()" type="text" id="valorEntrada" name="valorEntrada"ng-required="true" class="form-control" placeholder="Valor da entrada"
                 ng-model="imovel.valorEntrada" aria-label="" mask-currency="'R$'"
                 config="{group:'.',decimal:',',indentation:' '}"  >              
@@ -48,8 +48,8 @@
 
 
         <!-- quantidade de parcelas -->
-        <div class="col-4 col-sm-6 col-6 col-lg-4">
-            <label for="quantdParcelas" class="form-label"></label>
+        <div class="col-4 col-sm-6 col-6 col-lg-4 containerInput">
+            <label for="quantdParcelas" class="form-label">Em quantas parcelas deseja parcelar?</label>
             <input type="number" id="quantdParcelas" min="1" max="360" pattern="[0-9]+$" name="quantdParcelas"
                 ng-required="true" class="form-control" placeholder="Em quantas parcelas deseja parcelar?"
                 ng-model="imovel.parcelas" aria-label="">

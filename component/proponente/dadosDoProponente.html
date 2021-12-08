@@ -5,7 +5,7 @@
         <div class="row">
 
             <!-- nome completo -->
-            <div class="col-4 col-sm-6 col-12 col-lg-4">
+            <div class="col-4 col-sm-6 col-12 col-lg-4 containerInput">
                 <label for="nomeCompleto" class="form-label">Nome completo</label>
                 <input type="text" id="nome" name="nomeCompleto" minlength="3" ng-required="true" class="form-control"
                     placeholder="Nome completo" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"
@@ -16,7 +16,7 @@
 
 
             <!-- profissão -->
-            <div class="col-4 col-sm-6 col-6 col-lg-4">
+            <div class="col-4 col-sm-6 col-6 col-lg-4 containerInput">
                 <label for="profissao" class="form-label">Profissão</label>
                 <input type="text" id="profissao" name="profissao" ng-required="true" class="form-control"
                     placeholder="Profissão" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"
@@ -26,7 +26,7 @@
             </div>
 
             <!-- cpf -->
-            <div class="col-4 col-sm-6 col-6 col-lg-4">
+            <div class="col-4 col-sm-6 col-6 col-lg-4 containerInput">
                 <label for="cpf" class="form-label">CPF</label>
                 <input ng-change="" type="text" id="cpf" name="cpf" ng-required="true" class="form-control" placeholder="CPF"
                     pattern="" ng-model="proponente.cpf" aria-label="" minlength="14" maxlength="14"> 
@@ -35,7 +35,7 @@
             </div>
 
             <!-- e-mail -->
-            <div class="col-4 col-sm-6 col-12 col-lg-4">
+            <div class="col-4 col-sm-6 col-12 col-lg-4 containerInput">
                 <label for="email" class="form-label">E-mail</label>
                 <input type="email" id="email" name="email" ng-required="true" class="form-control" placeholder="E-mail"
                     ng-model="proponente.email" aria-label="" pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$">
@@ -44,7 +44,7 @@
             </div>
          
             <!-- data de nascimento -->
-            <div class="col-4 col-sm-6 col-6 col-lg-4">
+            <div class="col-4 col-sm-6 col-6 col-lg-4 containerInput">
                 <label for="aniversario" class="form-label">Data de nascimento</label>
                     <input ng-change="teste()" type="date" id="aniversario" ng-required="true" name="aniversario" class="form-control"
                     placeholder="Data de nascimento" ng-model="proponente.aniversario">                 
@@ -54,7 +54,7 @@
             </div>
             
             <!-- cep -->
-            <div class="col-4 col-sm-6 col-6 col-lg-4">
+            <div class="col-4 col-sm-6 col-6 col-lg-4 containerInput">
                 <label for="cep" class="form-label">CEP</label>
                 <input type="text" id="cep" ng-required="true" name="cep" pattern="" minlength="9" maxlength="9"
                     class="form-control" placeholder="CEP" ng-model="proponente.cep" name="cep" aria-label="">
@@ -64,7 +64,7 @@
             </div>
 
             <!-- celular -->
-            <div class="col-4 col-sm-6 col-6 col-lg-4 ">
+            <div class="col-4 col-sm-6 col-6 col-lg-4 containerInput">
                 <label for="celular" class="form-label">Celular</label>
                 <input type="text" id="celular" name="celular" ng-required="true" class="form-control"
                     placeholder="Celular" pattern="" ng-model="proponente.celular" minlength="14" maxlength="14"
@@ -78,7 +78,7 @@
         <div class="button-proponente">
             <button ng-click="telaInicial()" type="button"
                 class="btn btn-primary btn-sm btnProp-imovel ">CANCELAR</button>
-            <button ng-click="telaimovel()" type="button" class="btn btn-primary btn-sm btnProp-imovel btn-continuar"
+            <button ng-click="telaimovel()" type="button" class="btn btn-sm btnProp-imovel btn-continuar"
                 ng-disabled="dadosProponente.$invalid || validaIdade">CONTINUAR</button>
         </div>
 
